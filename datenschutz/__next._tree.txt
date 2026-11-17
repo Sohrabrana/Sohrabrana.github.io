@@ -7,4 +7,4 @@
 :HL["/_next/static/media/barlow_latin_600_normal-s.p.20ymm9zt6h9oi.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"datenschutz","h":96,"c":"$Q2"}]]
-0:{"b":"cvJZg0OyidLgVhhFgbaXr","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"2pRe3PhKMzB7MbqdX5pp5","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
