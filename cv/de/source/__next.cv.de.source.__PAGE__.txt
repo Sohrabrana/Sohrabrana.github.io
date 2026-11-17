@@ -1,0 +1,408 @@
+1:"$Sreact.fragment"
+2:"/_next/static/chunks/3tc8d07vvykjw.js"
+3:I[3020,["$2"],"SiteHeader"]
+4:"/_next/static/chunks/1ua2kfq9s-me6.js"
+5:I[39756,["$4"],"default"]
+6:I[37457,["$4"],"default"]
+7:"/_next/static/chunks/3mfr1taotu6jf.js"
+8:I[22016,["$2","$7"],""]
+13:I[5014,["$2","$7"],"default"]
+1a:"ViewportBoundary"
+1b:I[97367,["$4"],"$1a"]
+1c:"MetadataBoundary"
+1d:I[97367,["$4"],"$1c"]
+1e:"$Sreact.suspense"
+:HL["/_next/static/chunks/0_rs7uo6woht8.css","style"]
+a:X
+d:X
+d:C
+12:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"lang":"de","className":"mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14","children":[["$","$L8",null,{"href":"/cv/de","className":"inline-flex items-center gap-2 text-[0.95rem] font-medium text-route hover:underline","children":[["$","$L13",null,{"icon":{"name":"arrow-left","size":24,"node":[["path",{"d":"m12 19-7-7 7-7","key":"1l729n"}],["path",{"d":"M19 12H5","key":"x3x0zl"}]]},"className":"size-4","aria-hidden":"true"}],"Lebenslauf ansehen"]}],["$","h1",null,{"className":"mt-6 font-display text-5xl font-bold leading-none sm:text-6xl","children":"LaTeX-Quelldatei"}],["$","p",null,{"className":"mt-3 max-w-[42rem] text-muted","children":"Sohrab_Rana_CV_German.tex, 173 Zeilen. In Overleaf mit dem Compiler pdfLaTeX übersetzen."}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","a",null,{"href":"/cv/Sohrab_Rana_CV_German.tex","download":true,"className":"inline-flex h-11 items-center gap-2 rounded-full bg-signal px-4 font-semibold text-signal-ink hover:brightness-95","children":[["$","$L13",null,{"icon":{"name":"download","size":24,"node":[["path",{"d":"M12 15V3","key":"m9g1x1"}],["path",{"d":"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4","key":"ih7n3h"}],["path",{"d":"m7 10 5 5 5-5","key":"brsn70"}]]},"className":"size-4","aria-hidden":"true"}],".tex herunterladen"]}],["$","a",null,{"href":"https://www.overleaf.com/docs?engine=pdflatex&snip_uri=https%3A%2F%2Fsohrabrana.github.io%2Fcv%2FSohrab_Rana_CV_German.tex","target":"_blank","rel":"noopener","className":"inline-flex h-11 items-center gap-2 rounded-full border border-ink/80 px-4 font-semibold hover:bg-ink hover:text-paper","children":["$L14","In Overleaf öffnen"]}],"$L15"]}],"$L16"]}],["$L17"],"$L18"]}],"p":"$@19","v":null,"s":"$a"}}]]
+10:[["children",{"s":"source","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@11","v":"$d","s":"$a"},"c":"$Q12"}]]
+e:[["children",{"s":"de","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@f","v":"$d","s":"$a"},"c":"$Q10"}]]
+b:[["children",{"s":"cv","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@c","v":"$d","s":"$a"},"c":"$Qe"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0_rs7uo6woht8.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/3tc8d07vvykjw.js","async":true}]],["$","html",null,{"lang":"en","data-theme":"light","suppressHydrationWarning":true,"className":"A0muGq_variable _1IpGza_variable","children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{var t=localStorage.getItem(\"theme\");if(t!==\"light\"&&t!==\"dark\"){t=window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\"}document.documentElement.setAttribute(\"data-theme\",t)}catch(e){}})()"}}]}],["$","body",null,{"className":"min-h-dvh antialiased","children":[["$","a",null,{"href":"#main","className":"sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-signal focus:px-4 focus:py-2 focus:font-medium focus:text-signal-ink","children":"Skip to content"}],["$","$L3",null,{}],["$","main",null,{"id":"main","children":["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}],"notFound":[["$","div",null,{"className":"mx-auto max-w-3xl px-5 py-24 sm:px-8","children":[["$","h1",null,{"className":"font-display text-6xl font-bold","children":"Page not found"}],["$","p",null,{"className":"mt-4 text-lg text-muted","children":"This address doesn't exist. The CVs and all sections are on the home page."}],["$","$L8",null,{"href":"/","className":"mt-8 inline-flex h-12 items-center rounded-full bg-signal px-5 font-semibold text-signal-ink","children":"Go to the home page"}]]}],[]]}]}],["$","footer",null,{"className":"border-t border-line","children":["$","div",null,{"className":"mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8","children":[["$","p",null,{"children":["© ","Sohrab Rana",". Content updated ","November 2026","."]}],["$","ul",null,{"className":"flex flex-wrap gap-x-5 gap-y-2","children":[["$","li",null,{"children":["$","$L8",null,{"href":"/impressum","className":"hover:text-ink","lang":"de","children":"Impressum"}]}],["$","li",null,{"children":["$","$L8",null,{"href":"/datenschutz","className":"hover:text-ink","lang":"de","children":"Datenschutz"}]}],""]}]]}]}]]}]]}]]}],"p":"$@9","v":null,"s":"$a"},"c":"$Qb"},"h":{"r":["$","$1","h",{"children":[null,["$","$L1b",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#eef1f4","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0c1626","media":"(prefers-color-scheme: dark)"}]]}],["$","$L1d",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$1e",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"LaTeX-Quelldatei des Lebenslaufs | Sohrab Rana"}],["$","meta","1",{"name":"description","content":"Bearbeitbare LaTeX-Quelldatei des deutschen Lebenslaufs von Sohrab Rana. In Overleaf öffnen oder als .tex herunterladen."}],["$","link","2",{"rel":"author","href":"https://sohrabrana.github.io"}],["$","meta","3",{"name":"author","content":"Sohrab Rana"}],["$","meta","4",{"name":"keywords","content":"Sohrab Rana,Business Intelligence Analyst,Data Analyst,Power BI Developer,Business Analyst,Supply Chain Analyst,Datenanalyst,Power BI,DAX,Power Query,SQL,SAP ERP,KPI reporting,Power Automate,Duisburg,NRW,Germany"}],["$","meta","5",{"name":"creator","content":"Sohrab Rana"}],["$","meta","6",{"name":"robots","content":"index, follow"}],["$","link","7",{"rel":"canonical","href":"https://sohrabrana.github.io/cv/de/source/"}],["$","meta","8",{"name":"format-detection","content":"telephone=no"}],["$","meta","9",{"property":"og:title","content":"Sohrab Rana – Business Intelligence & Data Analyst (Power BI, SQL) in Germany"}],["$","meta","10",{"property":"og:description","content":"Business Intelligence and Data Analyst in Duisburg, Germany. Power BI dashboards, DAX, Power Query, SQL and SAP ERP data from work at Uniper and Continental. Available for full-time roles in Germany."}],["$","meta","11",{"property":"og:url","content":"https://sohrabrana.github.io/"}],"$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a","$L2b","$L2c","$L2d","$L2e","$L2f","$L30","$L31","$L32","$L33"]}]}],null]}],"$L34"]}],"p":"$@35","v":null,"s":"$a"}},"a":"$@36","u":"$@37","b":"cvJZg0OyidLgVhhFgbaXr"}
+38:I[78085,["$2","$7"],"CopyButton"]
+3b:I[97367,["$4"],"OutletBoundary"]
+3d:I[27201,["$4"],"IconMark"]
+14:["$","$L13",null,{"icon":{"name":"external-link","size":24,"node":[["path",{"d":"M15 3h6v6","key":"1q9fwt"}],["path",{"d":"M10 14 21 3","key":"gplh6r"}],["path",{"d":"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6","key":"a6xqqp"}]]},"className":"size-4","aria-hidden":"true"}]
+39:T22c6,% =====================================================================
+%  Sohrab Rana – Lebenslauf (Deutsch)
+%  Compiler: pdfLaTeX  (Overleaf: Menu -> Compiler -> pdfLaTeX)
+%  Layout:   eine A4-Seite, einspaltig, ATS-freundlich
+%            (keine Tabellen, Icons, Spalten, Textboxen oder Grafiken)
+%  Optional: Bewerbungsfoto -> \showphototrue setzen und photo.jpg
+%            in denselben Ordner legen (für ATS-Uploads besser ohne Foto).
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Kodierung: Text bleibt für ATS auslesbar ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% ---------- Schrift & Typografie ----------
+\usepackage[sfdefault,scale=0.93]{plex-sans} % IBM Plex Sans
+\usepackage[ngerman]{babel}
+\usepackage{microtype}
+\usepackage[none]{hyphenat}                  % keine Silbentrennung: Schlüsselwörter bleiben ganz
+\usepackage[a4paper,left=1.45cm,right=1.45cm,top=1.0cm,bottom=0.85cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage[hidelinks,unicode,pdfusetitle]{hyperref}
+
+% ---------- Farben (dezenter Akzent) ----------
+\definecolor{ink}{HTML}{0F1E33}
+\definecolor{accent}{HTML}{2450B8}
+\definecolor{muted}{HTML}{52627A}
+\definecolor{rule}{HTML}{C9D2DE}
+\color{ink}
+
+% ---------- Foto (optional) ----------
+\newif\ifshowphoto
+\showphotofalse            % \showphototrue = Foto oben rechts (Datei: photo.jpg)
+
+% ---------- Persönliche Angaben ----------
+\newcommand{\cvname}{Sohrab Rana}
+\newcommand{\cvheadline}{Junior Business Intelligence Analyst | Datenanalyst | Power BI Developer}
+\newcommand{\cvlocation}{Duisburg}
+% Telefon: beide Zeilen leer lassen ({}), um die Nummer im Kopf auszublenden.
+\def\cvphone{+49 179 446 8668}
+\def\cvphonelink{+491794468668}
+\newcommand{\cvemail}{sohrabrana44@gmail.com}
+\newcommand{\cvlinkedin}{linkedin.com/in/sohrab-rana}
+\newcommand{\cvgithub}{github.com/Sohrabrana}
+\newcommand{\cvportfolio}{sohrabrana.github.io}
+
+\hypersetup{
+  pdftitle={Lebenslauf Sohrab Rana - Business Intelligence Analyst, Datenanalyst, Power BI Developer},
+  pdfauthor={Sohrab Rana},
+  pdfsubject={Lebenslauf},
+  pdfkeywords={Business Intelligence Analyst, Datenanalyst, Data Analyst, Power BI Developer, Business Analyst, Supply Chain Analyst, Power BI, DAX, Power Query, SQL, SAP ERP, KPI-Reporting, Prozessoptimierung, Power Automate},
+  pdflang={de-DE}
+}
+
+% ---------- Layout-Helfer ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+\linespread{1.0}
+
+\titleformat{\section}
+  {\color{accent}\large\bfseries}
+  {}{0pt}{}
+  [\vspace{-0.55em}{\color{rule}\rule{\linewidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{0.46em}{0.26em}
+
+\setlist[itemize]{leftmargin=1.05em,label={\color{accent}\textbullet},
+  itemsep=0.5pt,parsep=0pt,topsep=1.2pt,partopsep=0pt}
+
+% \role{Position}{Zeitraum}{Arbeitgeber}{Ort}
+\newcommand{\role}[4]{%
+  \vspace{0.22em}%
+  {\bfseries #1}\par
+  {\color{muted}#2} | {\color{accent}#3} | {\color{muted}#4}\par}
+
+% \entry{Titel}{Zeitraum}  – für Projekte und Ausbildung
+\newcommand{\entry}[2]{%
+  \vspace{0.22em}%
+  {\bfseries #1} | {\color{muted}#2}\par}
+
+\newcommand{\skill}[2]{{\bfseries #1:} #2\par\vspace{0.12em}}
+
+% =====================================================================
+\begin{document}
+
+% ---------- Kopfzeile ----------
+\ifshowphoto\begin{minipage}[t]{0.86\linewidth}\fi
+{\fontsize{23}{26}\selectfont\bfseries \cvname\par}
+\vspace{0.15em}
+{\large\color{accent} \cvheadline\par}
+\vspace{0.3em}
+{\small
+\cvlocation{} | \ifx\cvphone\empty\else\href{tel:\cvphonelink}{\cvphone} | \fi\href{mailto:\cvemail}{\cvemail} | \href{https://www.\cvlinkedin}{\cvlinkedin} | \href{https://\cvgithub}{\cvgithub}\par
+\vspace{0.12em}
+Portfolio: \href{https://\cvportfolio}{\cvportfolio} | Ab sofort verfügbar in Vollzeit | Deutschlandweit umzugsbereit\par}
+\ifshowphoto\end{minipage}\hfill
+\begin{minipage}[t]{0.1\linewidth}\vspace{0pt}\raggedleft
+\includegraphics[width=\linewidth]{photo.jpg}
+\end{minipage}\par\fi
+
+% ---------- Profil ----------
+\section{Profil}
+Business Intelligence Analyst und Datenanalyst mit 1,5 Jahren Praxiserfahrung bei Uniper und Continental (Werkstudent, Praktikum). Schwerpunkte: Power-BI-Dashboards, Datenmodellierung und KPI-Reporting mit SAP-, SQL- und Excel-Daten sowie Prozessautomatisierung (Power Platform). B.Sc. Mobility and Logistics; M.Sc. Operations Research and Business Analytics laufend.
+
+% ---------- Berufserfahrung ----------
+\section{Berufserfahrung}
+
+\role{Werkstudent – Operational Excellence / Transformation \& Excellence}{04/2025 – 04/2026}
+     {Uniper Global Commodities SE}{Düsseldorf (hybrid)}
+\begin{itemize}
+  \item Entwicklung und Veröffentlichung von 5 Power-BI-Dashboards für das Management- und operative KPI-Reporting
+  \item Datenaufbereitung und Datenmodellierung (Microsoft 365, SharePoint, Microsoft Forms) mit Power Query, DAX und Excel; Betreuung der automatisierten Datenaktualisierung
+  \item Umsetzung eines KI-Agenten mit Microsoft Copilot Studio für ein SharePoint-basiertes Wissensmanagement-Portal
+  \item Automatisierung von Arbeitsabläufen mit Power Automate und Power Apps; Prozessanalyse und Prozessoptimierung
+  \item Begleitung der Einführung von Microsoft 365 Copilot mit Praxisbeispielen und 4 Praxisschulungen zu Copilot-Agenten; Vorstellung der Dashboard-Updates in monatlichen Teammeetings
+\end{itemize}
+
+\role{Praktikant – Microsoft Power BI und Effizienzmaßnahmen}{08/2024 – 01/2025}
+     {Continental – ADC Automotive Distance Control Systems GmbH}{Lindau (Bodensee)}
+\begin{itemize}
+  \item Entwicklung von Power-BI-Dashboards und Datenmodellen in 8 Projekten der Application Engineering Excellence, u.\,a. Europa-Wochenreports, Prototypenkosten, EBOM (Engineering-Stückliste), Umfrageauswertung
+  \item Extraktion, Transformation und Validierung von Daten aus SAP ERP, SQL-Datenbanken, SharePoint, JIRA und Excel/CSV mit Power Query und DAX; Automatisierung der Datenaufbereitung mit Excel-VBA, Makros und KNIME
+  \item Maßgeschneiderte Dashboards für Stakeholder in Europa, Nordamerika, China, Japan, Korea und Rumänien
+  \item Freiwillige Verlängerung (remote, 01/2025 – 04/2025): Weiterentwicklung der Dashboards, Datenvalidierung
+\end{itemize}
+
+\vspace{0.22em}%
+{\bfseries Verkaufsberater (Studentenjob neben dem Studium)}, {\color{accent}H\&M über Studitemps GmbH}, Köln | {\color{muted}02/2021 – 08/2024}\par
+
+% ---------- Projekte ----------
+\section{Projekte}
+
+\entry{Bachelorarbeit: Einführung von Microsoft 365 Copilot bei Uniper (Note 2,0)}{01/2026 – 05/2026}
+\begin{itemize}
+  \item Analyse von Microsoft-365-Nutzungsdaten, einer Mitarbeiterbefragung und Experteninterviews auf Basis des UTAUT-Modells; Power-BI-Dashboard und 7 Handlungsempfehlungen
+\end{itemize}
+
+\entry{SQL- und Power-BI-Portfolioprojekte (synthetische Daten) – \href{https://github.com/Sohrabrana}{github.com/Sohrabrana}}{2026}
+\begin{itemize}
+  \item \textbf{Lieferperformance-Analyse:} MySQL-Datenmodell mit Datenqualitätsprüfungen; CTEs, Fensterfunktionen und P90-Lieferzeiten für Versanddienstleister- und Lager-Scorecards; Sternschema mit 20 DAX-Measures
+  \item \textbf{Bestands- und Einkaufsanalyse:} 16 Fachfragen mit JOINs, Aggregationen und Unterabfragen; Lieferanten-Scorecard
+\end{itemize}
+
+% ---------- Kenntnisse ----------
+\section{IT-Kenntnisse}
+\skill{BI \& Reporting}{Power BI (Desktop \& Service), DAX, Power Query, Datenmodellierung (Sternschema), Datenvisualisierung}
+\skill{Daten \& Systeme}{SQL (MySQL), Python (gute Kenntnisse), Excel (VBA/Makros), SAP ERP, SharePoint, JIRA, KNIME}
+\skill{Automatisierung \& KI}{Power Automate, Power Apps, Microsoft Copilot Studio, Microsoft 365 Copilot}
+\skill{Methoden}{KPI-Reporting, Datenvalidierung, Prozessanalyse, Prozessoptimierung, Lean Six Sigma, Schulungen}
+
+% ---------- Ausbildung ----------
+\section{Ausbildung}
+\entry{M.Sc. Operations Research and Business Analytics – Otto-von-Guericke-Universität Magdeburg}{seit 10/2026}
+\entry{B.Sc. Mobility and Logistics – Hochschule Rhein-Waal}{10/2021 – 05/2026}
+{\small Schwerpunkte: Datenmanagement, Statistik, Wirtschaftsinformatik (SAP), Lineare Optimierung, Supply Chain Management\par}
+
+% ---------- Zertifikate ----------
+\section{Zertifikate und Weiterbildungen}
+{\small
+Mastering BI with DAX, Power BI and Excel, LinkedIn Learning (2026) | Lean Six Sigma Yellow Belt, Uniper (2026) | McKinsey Forward Program (2026) | Copilot Studio Masterclass, Udemy (2025) | Power BI, 365 Data Science (2024) | SAP University Alliances Zertifikat (2022)\par}
+
+% ---------- Sprachen ----------
+\section{Sprachkenntnisse}
+Bengalisch: Muttersprache | Englisch: C1 (verhandlungssicher) | Deutsch: B1 (telc-Zertifikat 2026, B2 in Vorbereitung)
+
+\end{document}
+15:["$","$L38",null,{"value":"$39","label":"Quelltext kopieren","tone":"light"}]
+3a:T22c6,% =====================================================================
+%  Sohrab Rana – Lebenslauf (Deutsch)
+%  Compiler: pdfLaTeX  (Overleaf: Menu -> Compiler -> pdfLaTeX)
+%  Layout:   eine A4-Seite, einspaltig, ATS-freundlich
+%            (keine Tabellen, Icons, Spalten, Textboxen oder Grafiken)
+%  Optional: Bewerbungsfoto -> \showphototrue setzen und photo.jpg
+%            in denselben Ordner legen (für ATS-Uploads besser ohne Foto).
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Kodierung: Text bleibt für ATS auslesbar ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% ---------- Schrift & Typografie ----------
+\usepackage[sfdefault,scale=0.93]{plex-sans} % IBM Plex Sans
+\usepackage[ngerman]{babel}
+\usepackage{microtype}
+\usepackage[none]{hyphenat}                  % keine Silbentrennung: Schlüsselwörter bleiben ganz
+\usepackage[a4paper,left=1.45cm,right=1.45cm,top=1.0cm,bottom=0.85cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage[hidelinks,unicode,pdfusetitle]{hyperref}
+
+% ---------- Farben (dezenter Akzent) ----------
+\definecolor{ink}{HTML}{0F1E33}
+\definecolor{accent}{HTML}{2450B8}
+\definecolor{muted}{HTML}{52627A}
+\definecolor{rule}{HTML}{C9D2DE}
+\color{ink}
+
+% ---------- Foto (optional) ----------
+\newif\ifshowphoto
+\showphotofalse            % \showphototrue = Foto oben rechts (Datei: photo.jpg)
+
+% ---------- Persönliche Angaben ----------
+\newcommand{\cvname}{Sohrab Rana}
+\newcommand{\cvheadline}{Junior Business Intelligence Analyst | Datenanalyst | Power BI Developer}
+\newcommand{\cvlocation}{Duisburg}
+% Telefon: beide Zeilen leer lassen ({}), um die Nummer im Kopf auszublenden.
+\def\cvphone{+49 179 446 8668}
+\def\cvphonelink{+491794468668}
+\newcommand{\cvemail}{sohrabrana44@gmail.com}
+\newcommand{\cvlinkedin}{linkedin.com/in/sohrab-rana}
+\newcommand{\cvgithub}{github.com/Sohrabrana}
+\newcommand{\cvportfolio}{sohrabrana.github.io}
+
+\hypersetup{
+  pdftitle={Lebenslauf Sohrab Rana - Business Intelligence Analyst, Datenanalyst, Power BI Developer},
+  pdfauthor={Sohrab Rana},
+  pdfsubject={Lebenslauf},
+  pdfkeywords={Business Intelligence Analyst, Datenanalyst, Data Analyst, Power BI Developer, Business Analyst, Supply Chain Analyst, Power BI, DAX, Power Query, SQL, SAP ERP, KPI-Reporting, Prozessoptimierung, Power Automate},
+  pdflang={de-DE}
+}
+
+% ---------- Layout-Helfer ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+\linespread{1.0}
+
+\titleformat{\section}
+  {\color{accent}\large\bfseries}
+  {}{0pt}{}
+  [\vspace{-0.55em}{\color{rule}\rule{\linewidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{0.46em}{0.26em}
+
+\setlist[itemize]{leftmargin=1.05em,label={\color{accent}\textbullet},
+  itemsep=0.5pt,parsep=0pt,topsep=1.2pt,partopsep=0pt}
+
+% \role{Position}{Zeitraum}{Arbeitgeber}{Ort}
+\newcommand{\role}[4]{%
+  \vspace{0.22em}%
+  {\bfseries #1}\par
+  {\color{muted}#2} | {\color{accent}#3} | {\color{muted}#4}\par}
+
+% \entry{Titel}{Zeitraum}  – für Projekte und Ausbildung
+\newcommand{\entry}[2]{%
+  \vspace{0.22em}%
+  {\bfseries #1} | {\color{muted}#2}\par}
+
+\newcommand{\skill}[2]{{\bfseries #1:} #2\par\vspace{0.12em}}
+
+% =====================================================================
+\begin{document}
+
+% ---------- Kopfzeile ----------
+\ifshowphoto\begin{minipage}[t]{0.86\linewidth}\fi
+{\fontsize{23}{26}\selectfont\bfseries \cvname\par}
+\vspace{0.15em}
+{\large\color{accent} \cvheadline\par}
+\vspace{0.3em}
+{\small
+\cvlocation{} | \ifx\cvphone\empty\else\href{tel:\cvphonelink}{\cvphone} | \fi\href{mailto:\cvemail}{\cvemail} | \href{https://www.\cvlinkedin}{\cvlinkedin} | \href{https://\cvgithub}{\cvgithub}\par
+\vspace{0.12em}
+Portfolio: \href{https://\cvportfolio}{\cvportfolio} | Ab sofort verfügbar in Vollzeit | Deutschlandweit umzugsbereit\par}
+\ifshowphoto\end{minipage}\hfill
+\begin{minipage}[t]{0.1\linewidth}\vspace{0pt}\raggedleft
+\includegraphics[width=\linewidth]{photo.jpg}
+\end{minipage}\par\fi
+
+% ---------- Profil ----------
+\section{Profil}
+Business Intelligence Analyst und Datenanalyst mit 1,5 Jahren Praxiserfahrung bei Uniper und Continental (Werkstudent, Praktikum). Schwerpunkte: Power-BI-Dashboards, Datenmodellierung und KPI-Reporting mit SAP-, SQL- und Excel-Daten sowie Prozessautomatisierung (Power Platform). B.Sc. Mobility and Logistics; M.Sc. Operations Research and Business Analytics laufend.
+
+% ---------- Berufserfahrung ----------
+\section{Berufserfahrung}
+
+\role{Werkstudent – Operational Excellence / Transformation \& Excellence}{04/2025 – 04/2026}
+     {Uniper Global Commodities SE}{Düsseldorf (hybrid)}
+\begin{itemize}
+  \item Entwicklung und Veröffentlichung von 5 Power-BI-Dashboards für das Management- und operative KPI-Reporting
+  \item Datenaufbereitung und Datenmodellierung (Microsoft 365, SharePoint, Microsoft Forms) mit Power Query, DAX und Excel; Betreuung der automatisierten Datenaktualisierung
+  \item Umsetzung eines KI-Agenten mit Microsoft Copilot Studio für ein SharePoint-basiertes Wissensmanagement-Portal
+  \item Automatisierung von Arbeitsabläufen mit Power Automate und Power Apps; Prozessanalyse und Prozessoptimierung
+  \item Begleitung der Einführung von Microsoft 365 Copilot mit Praxisbeispielen und 4 Praxisschulungen zu Copilot-Agenten; Vorstellung der Dashboard-Updates in monatlichen Teammeetings
+\end{itemize}
+
+\role{Praktikant – Microsoft Power BI und Effizienzmaßnahmen}{08/2024 – 01/2025}
+     {Continental – ADC Automotive Distance Control Systems GmbH}{Lindau (Bodensee)}
+\begin{itemize}
+  \item Entwicklung von Power-BI-Dashboards und Datenmodellen in 8 Projekten der Application Engineering Excellence, u.\,a. Europa-Wochenreports, Prototypenkosten, EBOM (Engineering-Stückliste), Umfrageauswertung
+  \item Extraktion, Transformation und Validierung von Daten aus SAP ERP, SQL-Datenbanken, SharePoint, JIRA und Excel/CSV mit Power Query und DAX; Automatisierung der Datenaufbereitung mit Excel-VBA, Makros und KNIME
+  \item Maßgeschneiderte Dashboards für Stakeholder in Europa, Nordamerika, China, Japan, Korea und Rumänien
+  \item Freiwillige Verlängerung (remote, 01/2025 – 04/2025): Weiterentwicklung der Dashboards, Datenvalidierung
+\end{itemize}
+
+\vspace{0.22em}%
+{\bfseries Verkaufsberater (Studentenjob neben dem Studium)}, {\color{accent}H\&M über Studitemps GmbH}, Köln | {\color{muted}02/2021 – 08/2024}\par
+
+% ---------- Projekte ----------
+\section{Projekte}
+
+\entry{Bachelorarbeit: Einführung von Microsoft 365 Copilot bei Uniper (Note 2,0)}{01/2026 – 05/2026}
+\begin{itemize}
+  \item Analyse von Microsoft-365-Nutzungsdaten, einer Mitarbeiterbefragung und Experteninterviews auf Basis des UTAUT-Modells; Power-BI-Dashboard und 7 Handlungsempfehlungen
+\end{itemize}
+
+\entry{SQL- und Power-BI-Portfolioprojekte (synthetische Daten) – \href{https://github.com/Sohrabrana}{github.com/Sohrabrana}}{2026}
+\begin{itemize}
+  \item \textbf{Lieferperformance-Analyse:} MySQL-Datenmodell mit Datenqualitätsprüfungen; CTEs, Fensterfunktionen und P90-Lieferzeiten für Versanddienstleister- und Lager-Scorecards; Sternschema mit 20 DAX-Measures
+  \item \textbf{Bestands- und Einkaufsanalyse:} 16 Fachfragen mit JOINs, Aggregationen und Unterabfragen; Lieferanten-Scorecard
+\end{itemize}
+
+% ---------- Kenntnisse ----------
+\section{IT-Kenntnisse}
+\skill{BI \& Reporting}{Power BI (Desktop \& Service), DAX, Power Query, Datenmodellierung (Sternschema), Datenvisualisierung}
+\skill{Daten \& Systeme}{SQL (MySQL), Python (gute Kenntnisse), Excel (VBA/Makros), SAP ERP, SharePoint, JIRA, KNIME}
+\skill{Automatisierung \& KI}{Power Automate, Power Apps, Microsoft Copilot Studio, Microsoft 365 Copilot}
+\skill{Methoden}{KPI-Reporting, Datenvalidierung, Prozessanalyse, Prozessoptimierung, Lean Six Sigma, Schulungen}
+
+% ---------- Ausbildung ----------
+\section{Ausbildung}
+\entry{M.Sc. Operations Research and Business Analytics – Otto-von-Guericke-Universität Magdeburg}{seit 10/2026}
+\entry{B.Sc. Mobility and Logistics – Hochschule Rhein-Waal}{10/2021 – 05/2026}
+{\small Schwerpunkte: Datenmanagement, Statistik, Wirtschaftsinformatik (SAP), Lineare Optimierung, Supply Chain Management\par}
+
+% ---------- Zertifikate ----------
+\section{Zertifikate und Weiterbildungen}
+{\small
+Mastering BI with DAX, Power BI and Excel, LinkedIn Learning (2026) | Lean Six Sigma Yellow Belt, Uniper (2026) | McKinsey Forward Program (2026) | Copilot Studio Masterclass, Udemy (2025) | Power BI, 365 Data Science (2024) | SAP University Alliances Zertifikat (2022)\par}
+
+% ---------- Sprachen ----------
+\section{Sprachkenntnisse}
+Bengalisch: Muttersprache | Englisch: C1 (verhandlungssicher) | Deutsch: B1 (telc-Zertifikat 2026, B2 in Vorbereitung)
+
+\end{document}
+16:["$","pre",null,{"className":"mt-8 max-h-[75vh] overflow-auto rounded-2xl border border-line bg-surface p-5 text-[0.82rem] leading-relaxed","children":["$","code",null,{"lang":"en","className":"font-mono","children":"$3a"}]}]
+17:["$","script","script-0",{"src":"/_next/static/chunks/3mfr1taotu6jf.js","async":true}]
+18:["$","$L3b",null,{"children":["$","$1e",null,{"name":"Next.MetadataOutlet","children":"$@3c"}]}]
+1f:["$","meta","12",{"property":"og:site_name","content":"Sohrab Rana"}]
+20:["$","meta","13",{"property":"og:locale","content":"en_US"}]
+21:["$","meta","14",{"property":"og:image","content":"https://sohrabrana.github.io/opengraph-image.png?opengraph-image.2qaxua1i9ap2w.png"}]
+22:["$","meta","15",{"property":"og:image:type","content":"image/png"}]
+23:["$","meta","16",{"property":"og:image:width","content":"1200"}]
+24:["$","meta","17",{"property":"og:image:height","content":"630"}]
+25:["$","meta","18",{"property":"og:image:alt","content":"Sohrab Rana, Business Intelligence and Data Analyst, open to full-time roles in Germany\n"}]
+26:["$","meta","19",{"property":"og:locale:alternate","content":"de_DE"}]
+27:["$","meta","20",{"property":"og:type","content":"profile"}]
+28:["$","meta","21",{"property":"profile:first_name","content":"Sohrab"}]
+29:["$","meta","22",{"property":"profile:last_name","content":"Rana"}]
+2a:["$","meta","23",{"name":"twitter:card","content":"summary_large_image"}]
+2b:["$","meta","24",{"name":"twitter:title","content":"Sohrab Rana – Business Intelligence & Data Analyst (Power BI, SQL) in Germany"}]
+2c:["$","meta","25",{"name":"twitter:description","content":"Business Intelligence and Data Analyst in Duisburg, Germany. Power BI dashboards, DAX, Power Query, SQL and SAP ERP data from work at Uniper and Continental. Available for full-time roles in Germany."}]
+2d:["$","meta","26",{"name":"twitter:image","content":"https://sohrabrana.github.io/twitter-image.png?twitter-image.2qaxua1i9ap2w.png"}]
+2e:["$","meta","27",{"name":"twitter:image:alt","content":"Sohrab Rana, Business Intelligence and Data Analyst, open to full-time roles in Germany\n"}]
+2f:["$","meta","28",{"name":"twitter:image:type","content":"image/png"}]
+30:["$","meta","29",{"name":"twitter:image:width","content":"1200"}]
+31:["$","meta","30",{"name":"twitter:image:height","content":"630"}]
+32:["$","link","31",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}]
+33:["$","$L3d","32",{}]
+34:["$","meta",null,{"name":"next-size-adjust","content":""}]
+a:300
+3c:null
+37:true
+a:C
+36:0
+11:"$undefined"
+f:"$undefined"
+c:"$undefined"
+9:"$undefined"
+35:"$undefined"
+19:"$undefined"
