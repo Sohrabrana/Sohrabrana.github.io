@@ -1,0 +1,76 @@
+# Rebuilds and publishes https://sohrabrana.github.io after every change on main:
+# 1. checks that no private data is published
+# 2. compiles both CVs from cv/*.tex (pdfLaTeX) and renders their preview images
+# 3. builds the static website and deploys it to GitHub Pages
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Privacy check
+        run: node scripts/privacy-check.mjs
+
+      - name: Compile CVs (pdfLaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            Sohrab_Rana_CV_English.tex
+            Sohrab_Rana_CV_German.tex
+          working_directory: cv
+
+      - name: Publish CV files and preview images
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          for name in Sohrab_Rana_CV_English Sohrab_Rana_CV_German; do
+            pages=$(pdfinfo "cv/$name.pdf" | awk '/^Pages:/ {print $2}')
+            if [ "$pages" != "1" ]; then echo "::warning::$name.pdf has $pages pages (target: 1)"; fi
+            cp "cv/$name.pdf" "public/cv/$name.pdf"
+            cp "cv/$name.tex" "public/cv/$name.tex"
+            pdftoppm -png -scale-to-x 1000 -scale-to-y -1 -f 1 -l 1 -singlefile "cv/$name.pdf" "public/cv/$name-preview"
+          done
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build website
+        run: npm run build
+        env:
+          STATIC_EXPORT: "1"
+          NEXT_PUBLIC_SITE_URL: https://sohrabrana.github.io
+          NEXT_TELEMETRY_DISABLED: "1"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

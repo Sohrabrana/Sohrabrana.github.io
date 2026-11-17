@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* Dark mode follows the data-theme attribute set before first paint (see layout.tsx). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------- Design tokens ---------- */
+:root,
+[data-theme="light"] {
+  --paper: #eef1f4;
+  --surface: #ffffff;
+  --ink: #0f1e33;
+  --muted: #4c5c73;
+  --line: #d3dae3;
+  --route: #2450b8;
+  --route-soft: #e3eafa;
+  --signal: #f2b705;
+  --signal-ink: #0f1e33;
+  --study: #5d6f8f;
+  --parttime: #a9b4c5;
+  --grid: #dfe4eb;
+  --band: #0f1e33;
+  --band-ink: #eef1f4;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --paper: #0c1626;
+  --surface: #132036;
+  --ink: #e7edf5;
+  --muted: #a1afc3;
+  --line: #26364f;
+  --route: #82a5ff;
+  --route-soft: #1b2b4a;
+  --signal: #f6c431;
+  --signal-ink: #0c1626;
+  --study: #8c9dba;
+  --parttime: #4a5d7e;
+  --grid: #1c2a42;
+  --band: #132036;
+  --band-ink: #e7edf5;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-route: var(--route);
+  --color-route-soft: var(--route-soft);
+  --color-signal: var(--signal);
+  --color-signal-ink: var(--signal-ink);
+  --color-study: var(--study);
+  --color-parttime: var(--parttime);
+  --color-grid: var(--grid);
+  --color-band: var(--band);
+  --color-band-ink: var(--band-ink);
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-condensed), var(--font-body), ui-sans-serif, sans-serif;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-feature-settings: "kern", "liga";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--signal-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--route);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Display type: condensed, tight, like signage. */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Prose links inside content */
+.text-link {
+  color: var(--route);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.text-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Hatched fill used for "extension" and "ongoing" segments in the chart */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    currentColor 0 2px,
+    transparent 2px 6px
+  );
+}
