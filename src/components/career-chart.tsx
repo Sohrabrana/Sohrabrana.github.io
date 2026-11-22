@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import type { TimelineRow } from "@/content/timeline";
 import { kindLabels } from "@/content/timeline";
 import { formatRange, formatYm, monthIndex } from "@/lib/site";
@@ -21,6 +22,7 @@ const barColor: Record<TimelineRow["kind"], string> = {
 };
 
 export function CareerChart({ rows, axisStart, axisEnd }: Props) {
+  const reduce = useReducedMotion();
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const start = monthIndex(axisStart);
@@ -35,9 +37,9 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
   const active = rows.find((r) => r.id === activeId);
 
   return (
-    <figure className="rounded-lg border border-line bg-surface p-5 sm:p-7">
+    <figure className="rounded-2xl border border-line bg-surface p-5 sm:p-7">
       <figcaption className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3">
-        <span className="font-display text-[1.6rem] font-semibold leading-none">Career timeline</span>
+        <span className="font-display text-2xl font-semibold">Career so far</span>
         <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted" aria-label="Legend">
           {(["work", "study", "thesis", "parttime"] as const).map((k) => (
             <li key={k} className="flex items-center gap-2">
@@ -67,7 +69,7 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
         </div>
 
         <ol className="relative mt-1 space-y-3 sm:space-y-2.5">
-          {rows.map((row) => {
+          {rows.map((row, i) => {
             const ongoing = !row.end;
             const end = row.end || axisEnd;
             const left = pct(row.start);
@@ -89,25 +91,31 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
                       style={{ left: `${pct(`${y}-01`)}%` }}
                     />
                   ))}
-                  <a
+                  <motion.a
                     href={row.href}
                     aria-label={`${row.detail}, ${range}`}
                     onMouseEnter={() => setActiveId(row.id)}
                     onMouseLeave={() => setActiveId((id) => (id === row.id ? null : id))}
                     onFocus={() => setActiveId(row.id)}
                     onBlur={() => setActiveId((id) => (id === row.id ? null : id))}
-                    style={{ left: `${left}%`, width: `${width}%` }}
-                    className={`absolute inset-y-1.5 block min-w-2 rounded-[4px] outline-offset-2 transition-[filter,box-shadow] hover:brightness-110 ${
+                    initial={reduce ? false : { scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.7, delay: 0.15 + i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ left: `${left}%`, width: `${width}%`, transformOrigin: "left center" }}
+                    className={`absolute inset-y-1 block min-w-2 rounded-[5px] outline-offset-2 transition-[filter,box-shadow] hover:brightness-110 ${
                       barColor[row.kind]
                     } ${activeId === row.id ? "ring-2 ring-ink/70 ring-offset-2 ring-offset-surface" : ""} ${
                       ongoing ? "[mask-image:linear-gradient(to_right,black_55%,transparent)]" : ""
                     }`}
                   />
                   {row.extension && (
-                    <span
+                    <motion.span
                       aria-hidden="true"
+                      initial={reduce ? false : { opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.4, delay: 0.85 + i * 0.09 }}
                       title={row.extension.label}
-                      className="hatch absolute inset-y-1.5 rounded-r-[4px] text-route/70"
+                      className="hatch absolute inset-y-1 rounded-r-[5px] text-route/70"
                       style={{
                         left: `${pct(row.extension.start) + span(row.extension.start, row.extension.start)}%`,
                         width: `${span(row.extension.start, row.extension.end) - span(row.extension.start, row.extension.start)}%`,

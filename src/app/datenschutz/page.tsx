@@ -48,7 +48,7 @@ export default function Datenschutz() {
 
       <h2 className={h2}>Externe Links</h2>
       <p className={p}>
-        Links zu LinkedIn, GitHub und Overleaf öffnen die Websites dieser Anbieter. Erst dann werden Daten an diese
+        Links zu LinkedIn und GitHub öffnen die Websites dieser Anbieter. Erst dann werden Daten an diese
         Anbieter übertragen; es gelten deren Datenschutzbestimmungen.
       </p>
 

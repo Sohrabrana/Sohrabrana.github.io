@@ -3,19 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/sync-cv-sources.mjs && node scripts/generate-seo-files.mjs && node scripts/privacy-check.mjs",
+    "predev": "node scripts/generate-seo-files.mjs && node scripts/privacy-check.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/sync-cv-sources.mjs && node scripts/generate-seo-files.mjs && node scripts/privacy-check.mjs",
+    "prebuild": "node scripts/generate-seo-files.mjs && node scripts/privacy-check.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "node scripts/sync-cv-sources.mjs && tsc --noEmit",
-    "cv": "node scripts/sync-cv-sources.mjs && node scripts/privacy-check.mjs && bash scripts/build-cv.sh && node scripts/sync-cv-sources.mjs",
+    "typecheck": "tsc --noEmit",
+    "cv": "node scripts/privacy-check.mjs && bash scripts/build-cv.sh",
     "privacy": "node scripts/privacy-check.mjs",
     "build:pages": "bash scripts/build-pages.sh"
   },
   "dependencies": {
     "lucide-react": "^1.74.0",
+    "motion": "^14.14.0",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"

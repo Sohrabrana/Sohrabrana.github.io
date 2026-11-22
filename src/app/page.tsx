@@ -1,6 +1,5 @@
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
-import { CareerChart } from "@/components/career-chart";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
@@ -13,7 +12,6 @@ import { experience } from "@/content/experience";
 import { projects, projectTags } from "@/content/projects";
 import { profile } from "@/content/profile";
 import { certifications, education } from "@/content/education";
-import { timelineAxis, timelineRows } from "@/content/timeline";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 
 function ProfileJsonLd() {
@@ -94,7 +92,6 @@ function ProfileJsonLd() {
 }
 
 export default function Home() {
-  const { axisStart, axisEnd } = timelineAxis();
   return (
     <>
       <ProfileJsonLd />
@@ -103,25 +100,20 @@ export default function Home() {
       <Section
         id="experience"
         title="Experience"
-        intro="Dates match my reference letters. Select a bar or a role to see what I did and the tools I used."
+        intro="Dates match my reference letters. Select a role to see what I did and the tools I used."
       >
-        <CareerChart rows={timelineRows} axisStart={axisStart} axisEnd={axisEnd} />
-        <div className="mt-14">
-          <ExperienceTimeline roles={experience} />
-        </div>
+        <ExperienceTimeline roles={experience} />
       </Section>
-      <References />
       <Section
         id="projects"
         title="Projects"
-        layout="stacked"
-        tone="surface"
-        intro="My four strongest pieces of work: two from my jobs at Uniper and Continental, one SQL and Power BI project you can open on GitHub, and my Bachelor's thesis. Each one shows the question, what I did and what came out of it."
+        intro="Workplace projects from Uniper and Continental, my thesis, and SQL and Power BI projects on GitHub."
       >
         <Projects projects={projects} tags={projectTags} />
       </Section>
       <Skills />
       <EducationSection />
+      <References />
       <CvDownloads />
       <Contact />
     </>

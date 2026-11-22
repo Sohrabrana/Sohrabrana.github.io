@@ -32,7 +32,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={theme ? `Switch to ${next} theme` : "Switch color theme"}
-      className="grid size-10 place-items-center rounded-lg text-ink transition-colors hover:bg-route-soft"
+      className="grid size-10 place-items-center rounded-full text-ink transition-colors hover:bg-route-soft"
     >
       <Sun className="hidden size-5 dark:block" aria-hidden="true" />
       <Moon className="size-5 dark:hidden" aria-hidden="true" />

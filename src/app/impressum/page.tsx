@@ -43,7 +43,7 @@ export default function Impressum() {
       <p className="mt-3">{legal.name}, Anschrift wie oben.</p>
       <h2 className="mt-8 text-xl font-semibold">Haftung für Links</h2>
       <p className="mt-3 text-muted">
-        Diese Website enthält Links zu externen Websites (z. B. LinkedIn, GitHub, Overleaf). Auf deren Inhalte habe ich
+        Diese Website enthält Links zu externen Websites (z. B. LinkedIn, GitHub). Auf deren Inhalte habe ich
         keinen Einfluss; für sie ist der jeweilige Anbieter verantwortlich.
       </p>
     </article>

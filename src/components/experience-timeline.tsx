@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { MapPin, Quote } from "lucide-react";
 import type { Role } from "@/content/types";
 import { formatRange, formatYm } from "@/lib/site";
@@ -14,6 +15,7 @@ const dotColor: Record<Role["kind"], string> = {
 export function ExperienceTimeline({ roles }: { roles: Role[] }) {
   const [selected, setSelected] = useState(roles[0].id);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const reduce = useReducedMotion();
 
   // Select the role named in the URL hash (#experience-<id>), e.g. from the hero chart.
   useEffect(() => {
@@ -72,7 +74,7 @@ export function ExperienceTimeline({ roles }: { roles: Role[] }) {
               tabIndex={isSelected ? 0 : -1}
               onClick={() => setSelected(r.id)}
               onKeyDown={(e) => onKeyDown(e, i)}
-              className={`relative shrink-0 rounded-lg border px-4 py-3 text-left transition-colors md:w-full ${
+              className={`relative shrink-0 rounded-xl border px-4 py-3 text-left transition-colors md:w-full ${
                 isSelected
                   ? "border-line bg-surface shadow-[0_1px_0_0_var(--line)]"
                   : "border-transparent hover:bg-surface/60"
@@ -83,7 +85,7 @@ export function ExperienceTimeline({ roles }: { roles: Role[] }) {
               )}
               <span className="flex items-center gap-2">
                 <span className={`size-2 rounded-full ${dotColor[r.kind]}`} aria-hidden="true" />
-                <span className="font-display text-[1.3rem] font-semibold leading-tight">{r.org}</span>
+                <span className="font-display text-xl font-semibold leading-tight">{r.org}</span>
               </span>
               <span className="mt-0.5 block whitespace-nowrap text-sm text-muted tabular">
                 {formatRange(r.start, r.end)}
@@ -106,9 +108,21 @@ export function ExperienceTimeline({ roles }: { roles: Role[] }) {
               tabIndex={0}
               className="focus-visible:outline-offset-8"
             >
-              <article key={isSelected ? `${r.id}-active` : r.id} className={isSelected ? "tab-in" : undefined}>
-                <RoleDetails role={r} />
-              </article>
+              {isSelected && (
+                <motion.article
+                  key={r.id}
+                  initial={reduce ? false : { opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <RoleDetails role={r} />
+                </motion.article>
+              )}
+              {!isSelected && (
+                <article>
+                  <RoleDetails role={r} />
+                </article>
+              )}
             </div>
           );
         })}
@@ -120,8 +134,8 @@ export function ExperienceTimeline({ roles }: { roles: Role[] }) {
 function RoleDetails({ role: r }: { role: Role }) {
   return (
     <>
-      <h3 className="font-display text-[1.75rem] font-semibold leading-[1.15] sm:text-[2.075rem]">{r.title}</h3>
-      <p className="mt-2 text-[1.08rem] font-medium text-route">{r.orgFull}</p>
+      <h3 className="font-display text-3xl font-semibold leading-tight sm:text-[2.1rem]">{r.title}</h3>
+      <p className="mt-2 text-lg text-route">{r.orgFull}</p>
       <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
         <span className="tabular">{formatRange(r.start, r.end)}</span>
         <span className="inline-flex items-center gap-1">
@@ -137,7 +151,7 @@ function RoleDetails({ role: r }: { role: Role }) {
         )}
       </p>
 
-      <p className="mt-5 max-w-[42rem] text-[1.15rem] leading-relaxed">{r.summary}</p>
+      <p className="mt-5 max-w-[42rem] text-lg">{r.summary}</p>
 
       <ul className="mt-5 max-w-[44rem] space-y-2.5">
         {r.highlights.map((h) => (
@@ -150,16 +164,16 @@ function RoleDetails({ role: r }: { role: Role }) {
 
       <ul className="mt-6 flex flex-wrap gap-2" aria-label="Tools">
         {r.tools.map((t) => (
-          <li key={t} className="rounded-md border border-line bg-surface px-2.5 py-1 text-sm font-medium">
+          <li key={t} className="rounded-md bg-route-soft px-2.5 py-1 text-sm font-medium text-route">
             {t}
           </li>
         ))}
       </ul>
 
       {r.reference && (
-        <figure className="mt-8 max-w-[42rem] rounded-r-lg border-l-[3px] border-signal bg-surface py-4 pl-5 pr-5">
+        <figure className="mt-8 max-w-[42rem] border-l-2 border-signal pl-5">
           <Quote className="size-5 text-muted" aria-hidden="true" />
-          <blockquote lang={r.reference.lang} className="mt-2 text-[1.1rem] font-medium leading-relaxed">
+          <blockquote lang={r.reference.lang} className="mt-2 text-lg">
             {r.reference.quote}
           </blockquote>
           {r.reference.translation && (

@@ -56,21 +56,3 @@ export const kindLabels: Record<TimelineRow["kind"], string> = {
   thesis: "Thesis",
   parttime: "Part-time job",
 };
-
-/** First and last month shown on the career chart's axis. */
-export function timelineAxis() {
-  const toIndex = (ym: string) => {
-    const [y, m] = ym.split("-").map(Number);
-    return y * 12 + (m - 1);
-  };
-  const starts = timelineRows.map((r) => toIndex(r.start));
-  const ends = timelineRows.map((r) => {
-    const latest = r.extension?.end ?? r.end;
-    return latest ? toIndex(latest) : toIndex(r.start) + 8;
-  });
-  const first = Math.min(...starts);
-  const last = Math.max(...ends);
-  const toYm = (i: number) => `${Math.floor(i / 12)}-${String((i % 12) + 1).padStart(2, "0")}`;
-  // Axis starts in January of the first year.
-  return { axisStart: `${Math.floor(first / 12)}-01`, axisEnd: toYm(last) };
-}

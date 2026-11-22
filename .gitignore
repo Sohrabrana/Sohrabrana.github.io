@@ -40,9 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated before dev/build from cv/*.tex
-/src/content/generated/
-
 # LaTeX build files
 *.aux
 *.fdb_latexmk

@@ -4,7 +4,7 @@ This repository holds my personal portfolio website (https://sohrabrana.github.i
 
 ## Refresh the portfolio (no installation needed)
 
-Every change you commit to `main` rebuilds and republishes the whole site automatically: both CV PDFs, their preview images, the LaTeX source pages and the website. It takes about 3 minutes.
+Every change you commit to `main` rebuilds and republishes the whole site automatically: both CV PDFs, their preview images and the website. It takes about 3 minutes.
 
 1. Open the file you want to change on GitHub (table below) and click the **pencil icon** ("Edit this file").
 2. Make your change.
@@ -15,10 +15,10 @@ Every change you commit to `main` rebuilds and republishes the whole site automa
 | --- | --- |
 | English CV | `cv/Sohrab_Rana_CV_English.tex` |
 | German CV | `cv/Sohrab_Rana_CV_German.tex` |
-| Intro, About (English and German), recruiter quick facts, contact details, "open to work" badge | `src/content/profile.ts` |
+| Intro, About (English and German), contact details, "open to work" badge | `src/content/profile.ts` |
 | Jobs (also the career chart) | `src/content/experience.ts` |
-| Projects (four case studies plus "More work") | `src/content/projects.ts` |
-| Skills matrix (where each skill was used) | `src/content/skills.ts` |
+| Projects (keep `featured: true` for the four strongest) | `src/content/projects.ts` |
+| Skills | `src/content/skills.ts` |
 | Education and certifications | `src/content/education.ts` |
 | Reference quotes | `src/content/references.ts` |
 | Portrait | upload a new `public/images/sohrab-rana.jpg` (Add file → Upload files, same name) |
@@ -30,19 +30,18 @@ Tips:
 - **If a run fails** (red cross in Actions): click it to see the message. The usual causes are a LaTeX typo (a missing `}`), a missing comma or quote in a `.ts` file, or the privacy check finding a phone number, birth date or ID number. Fix the file and commit again; the previous version stays online meanwhile.
 - **Keep both CVs to one page.** The run shows a warning if a CV grows to two pages.
 
-- **Website:** Next.js 16 (App Router), TypeScript and Tailwind CSS 4. All pages are static; animations are plain CSS. Fonts: IBM Plex Sans and IBM Plex Sans Condensed (self-hosted, the same family as the CVs).
+- **Website:** Next.js 16 (App Router), TypeScript, Tailwind CSS 4 and Motion. All pages are static.
 - **CVs:** `cv/Sohrab_Rana_CV_English.tex` and `cv/Sohrab_Rana_CV_German.tex` (pdfLaTeX, one A4 page each, ATS-friendly)
 - **Published PDFs:** `public/cv/` (the website links to these files)
 
 ```
 cv/                          LaTeX sources of both CVs (+ optional photo.jpg)
-public/cv/                   Compiled PDFs, .tex copies and preview images served by the site
+public/cv/                   Compiled PDFs and preview images served by the site
 public/images/               Portrait photo
 src/content/                 ALL website text: edit these files to update the site
 src/components/              UI components
-src/app/                     Pages: home, /cv/en, /cv/de, LaTeX source pages, Impressum, Datenschutz
+src/app/                     Pages: home, /cv/en, /cv/de, Impressum, Datenschutz
 scripts/build-cv.sh          Compiles the CVs locally and copies them to public/cv/
-scripts/sync-cv-sources.mjs  Feeds the .tex files to the "View LaTeX source" pages (runs automatically)
 .github/workflows/           Rebuilds the CV PDFs on GitHub when a .tex file changes
 scripts/privacy-check.mjs    Blocks builds that would publish private data
 ```
@@ -70,10 +69,10 @@ Every text on the site lives in `src/content/`. Components never need to change 
 
 | What you want to change | File |
 | --- | --- |
-| Name, headline, intro, About text, German short profile, recruiter quick facts, email, links, "open to work" badge | `src/content/profile.ts` |
-| Work experience (also feeds the career chart and the hero diagram) | `src/content/experience.ts` |
-| Projects (four case studies plus "More work") | `src/content/projects.ts` |
-| Skills matrix (where each skill was used) | `src/content/skills.ts` |
+| Name, headline, intro, About text, German short profile, quick facts, email, links, "open to work" badge | `src/content/profile.ts` |
+| Work experience (also feeds the career chart in the hero) | `src/content/experience.ts` |
+| Projects (keep `featured: true` for the four strongest) | `src/content/projects.ts` |
+| Skills | `src/content/skills.ts` |
 | Education and certifications | `src/content/education.ts` |
 | Quotes from reference letters | `src/content/references.ts` |
 | CV card texts and file names | `src/content/cv.ts` |
@@ -81,39 +80,26 @@ Every text on the site lives in `src/content/`. Components never need to change 
 
 ### Add a project
 
-Projects live in `src/content/projects.ts`. Keep `featured: true` for the **four strongest** projects only: they are shown as full case studies (question, what I did, results, visual evidence). Everything else goes under "More work" with `featured: false`.
+Add an object to the `projects` array in `src/content/projects.ts`:
 
 ```ts
 {
   id: "my-new-project",                 // unique, lowercase, no spaces
   title: "Sales forecast dashboard",
-  context: "Portfolio project, public data", // or "Company name, internship"
+  context: "Portfolio project, public data", // or "Company name, workplace project"
   kind: "portfolio",                    // "workplace" | "academic" | "portfolio"
   period: "2027",
-  featured: false,                      // true = case study (max. four), false = "More work"
-  tags: ["BI & reporting", "SQL"],      // filter buttons: "BI & reporting" | "Supply chain" | "Digital transformation" | "SQL"
-  problem: "The business question in one or two sentences (for 'More work': the summary).",
-  did: ["What you did yourself, one item per line"],   // case studies only
-  results: ["Only results you can prove"],             // optional
+  featured: false,                      // true = large case study, false = compact list
+  tags: ["Power BI", "SQL"],            // used by the filter buttons
+  summary: "One or two sentences about the problem and the result.",
+  built: ["What you built, one item per line"],
+  outcomes: ["Only results you can prove"],
   tools: ["Power BI", "DAX", "SQL"],
   links: [{ label: "GitHub", href: "https://github.com/Sohrabrana/..." }],
-  // evidence: case studies only. Either a schematic of the setup...
-  evidence: {
-    type: "flow",
-    title: "How the reporting fits together",
-    steps: [{ title: "Sources", items: ["SAP ERP", "Excel"] }, { title: "Reports", items: ["Power BI dashboard"] }],
-    caption: "Schematic of the setup. No company data is shown.",
-  },
-  // ...or charts drawn from numbers that are published in the project's own repository:
-  // evidence: { type: "charts", caption: "...", charts: [{ title, kind: "bars" | "line", dimension, measure, unit, min, max, data: [{ label, value, note?, highlight? }] }] },
 },
 ```
 
-Order in the file = order on the page. **Never put invented numbers or screenshots of company data into a project.** Workplace projects use a `flow` schematic; charts are only for public projects whose results are on GitHub.
-
-### Update the skills matrix
-
-Each skill in `src/content/skills.ts` lists where it was actually used: `usedAt: ["uniper", "continental", "projects", "study"]`. Add a skill only when you can point to one of these places. `coreStack` is the short tool list shown in the hero diagram.
+Order in the file = order on the page. New filter topics go into `projectTags` in the same file (and the `ProjectTag` type in `src/content/types.ts`).
 
 ### Add a certification
 
@@ -139,8 +125,7 @@ See "Refresh the portfolio" at the top: edit the `.tex` file, commit, and the wo
 
 ### Option 2: Overleaf
 
-1. In Overleaf: **New Project → Upload Project** and upload the `.tex` file (for the German CV with photo, also upload `cv/photo.jpg`).
-   You can also click **Open in Overleaf** on the site's "View LaTeX source" page.
+1. In Overleaf: **New Project → Upload Project** and upload the `.tex` file from `cv/` (for the German CV with photo, also upload `cv/photo.jpg`).
 2. Set **Menu → Compiler → pdfLaTeX** and compile.
 3. Copy your edited source back into `cv/<file>.tex` on GitHub and commit. The workflow rebuilds the PDFs.
 
@@ -150,7 +135,7 @@ Requires TeX Live with `latexmk`, the `plex`, `babel-german`, `enumitem`, `title
 
 ```bash
 sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-lang-german latexmk poppler-utils
-npm run cv      # compiles both CVs and copies PDFs, sources and previews to public/cv/
+npm run cv      # compiles both CVs and copies the PDFs and previews to public/cv/
 ```
 
 The script warns if a CV grows beyond one page.
@@ -173,7 +158,7 @@ To build the same static site on your computer: `npm run build:pages` (output in
 
 1. Sign in at [vercel.com](https://vercel.com) with GitHub.
 2. **Add New → Project**, import this repository. Vercel detects Next.js; keep the default settings (build command `npm run build`).
-3. Optional: under **Settings → Environment Variables**, set `NEXT_PUBLIC_SITE_URL` to the final address (for example `https://sohrab-rana.vercel.app` or your own domain). It is used for canonical URLs, the sitemap, Open Graph and the "Open in Overleaf" links.
+3. Optional: under **Settings → Environment Variables**, set `NEXT_PUBLIC_SITE_URL` to the final address (for example `https://sohrab-rana.vercel.app` or your own domain). It is used for canonical URLs, the sitemap and Open Graph.
 4. Click **Deploy**. Every push to `main` redeploys automatically.
 
 If you move the site to another address than `https://sohrabrana.github.io`, update `siteUrl` in `src/content/profile.ts` and `\cvportfolio` in both `.tex` files, then rebuild the CVs.
@@ -190,7 +175,7 @@ Vercel project → **Settings → Domains** → add your domain and follow the D
 
 ## Private data
 
-Everything in `public/`, `src/` and `cv/` is published: on the website, in the downloadable PDFs, on the "View LaTeX source" pages, or in the JavaScript sent to every visitor.
+Everything in `public/`, `src/` and `cv/` is public: on the website, in the downloadable PDFs, in the JavaScript sent to every visitor, or in this public repository. The LaTeX sources are not shown on the website, but `cv/*.tex` can be read by anyone who opens the repository.
 
 - **Published on purpose:** name, email, phone number, city, LinkedIn, GitHub and professional facts. To hide the phone number, set `showPhone: false` in `src/content/profile.ts` and empty `\cvphone` / `\cvphonelink` in both `.tex` files.
 - **Never published:** home address, date and place of birth, nationality, certificate ID numbers, the reference letters themselves and their signatories' names.
@@ -203,6 +188,6 @@ Everything in `public/`, `src/` and `cv/` is published: on the website, in the d
 ## Quality checks done
 
 - `npm run lint`, `npm run typecheck` and `npm run build` pass; all routes are prerendered as static pages.
-- Lighthouse: see the latest numbers in the pull request that introduced the current design.
+- Lighthouse (local production build): desktop 100 / 100 / 100 / 100, mobile 89 performance, 100 accessibility, best practices and SEO.
 - Both CVs compile to one A4 page. Text extraction was checked with `pdftotext`, `pdfminer.six` and `pypdf`: reading order, umlauts and ligatures are correct.
 - No ATS score is claimed: there is no standard ATS, and scores from online checkers are not comparable. The CVs follow the common parsing rules instead (single column, standard headings, real text, consistent dates, no tables or graphics).

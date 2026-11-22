@@ -30,7 +30,6 @@ for name in Sohrab_Rana_CV_English Sohrab_Rana_CV_German; do
   fi
 
   cp "$BUILD/$name.pdf" "$OUT/$name.pdf"
-  cp "$SRC/$name.tex" "$OUT/$name.tex"
 
   if command -v pdftoppm > /dev/null; then
     pdftoppm -png -scale-to-x 1000 -scale-to-y -1 -f 1 -l 1 -singlefile "$BUILD/$name.pdf" "$OUT/$name-preview"

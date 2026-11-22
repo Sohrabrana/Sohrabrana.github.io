@@ -1,64 +1,56 @@
-import type { SkillGroup, SkillPlace } from "./types";
+import type { SkillGroup } from "./types";
 
-// Skills, shown as a matrix: each skill is ticked where I actually used it.
-// This lets recruiters check every skill against real experience instead of a self-rating.
-// usedAt: "uniper" | "continental" | "projects" (portfolio projects on GitHub) | "study" (degree, thesis, certificates)
-
-export const skillPlaces: { id: SkillPlace; label: string; short: string }[] = [
-  { id: "uniper", label: "Uniper", short: "Uniper" },
-  { id: "continental", label: "Continental", short: "Conti" },
-  { id: "projects", label: "Portfolio projects", short: "Projects" },
-  { id: "study", label: "Degree and thesis", short: "Study" },
-];
+// Skills grouped by area. "evidence" says where the skill was used,
+// so recruiters can connect it to experience instead of a self-rating.
 
 export const skillGroups: SkillGroup[] = [
   {
     id: "bi",
     title: "BI and reporting",
+    icon: "chart",
     skills: [
-      { name: "Power BI Desktop & Service", usedAt: ["uniper", "continental", "projects", "study"], note: "Thesis dashboard" },
-      { name: "DAX", usedAt: ["uniper", "continental", "projects"], note: "20 measures in the supply chain project" },
-      { name: "Power Query", usedAt: ["uniper", "continental", "projects"] },
-      { name: "Data modeling (star schema)", usedAt: ["continental", "projects"] },
-      { name: "KPI reporting", usedAt: ["uniper", "continental", "projects"] },
-      { name: "Scheduled refresh in the Power BI Service", usedAt: ["uniper"] },
+      { name: "Power BI Desktop & Service", evidence: "Uniper, Continental, 4 portfolio projects" },
+      { name: "DAX", evidence: "Uniper, Continental, supply chain project (20 measures)" },
+      { name: "Power Query", evidence: "Uniper, Continental" },
+      { name: "Data modeling (star schema)", evidence: "Continental, supply chain project" },
+      { name: "KPI dashboards and automated refresh", evidence: "Uniper" },
+      { name: "Data visualization", evidence: "All dashboard work" },
     ],
   },
   {
     id: "data",
     title: "Data and systems",
+    icon: "database",
     skills: [
-      { name: "SQL (MySQL)", usedAt: ["continental", "projects"], note: "3 SQL projects on GitHub" },
-      { name: "SAP ERP data", usedAt: ["continental", "study"], note: "SAP University Alliances certificate" },
-      { name: "Excel (VBA, macros, pivot tables)", usedAt: ["uniper", "continental", "projects"] },
-      { name: "SharePoint as a data source", usedAt: ["uniper", "continental"] },
-      { name: "JIRA as a data source", usedAt: ["continental"] },
-      { name: "KNIME", usedAt: ["continental"] },
-      { name: "Python", usedAt: ["projects"], note: "Synthetic data generation" },
+      { name: "SQL (MySQL)", evidence: "Continental data sources, 3 SQL portfolio projects" },
+      { name: "SAP ERP data", evidence: "Continental; SAP University Alliances certificate" },
+      { name: "Excel, advanced (VBA, macros, pivot tables)", evidence: "Continental, Uniper" },
+      { name: "SharePoint and JIRA as data sources", evidence: "Continental, Uniper" },
+      { name: "KNIME", evidence: "Continental" },
+      { name: "Python", evidence: "Synthetic data generation in portfolio projects" },
     ],
   },
   {
     id: "automation",
     title: "Automation and AI",
+    icon: "workflow",
     skills: [
-      { name: "Power Automate", usedAt: ["uniper"] },
-      { name: "Power Apps", usedAt: ["uniper"] },
-      { name: "Microsoft Copilot Studio", usedAt: ["uniper"], note: "Knowledge hub agent" },
-      { name: "Microsoft 365 Copilot adoption and training", usedAt: ["uniper", "study"] },
+      { name: "Power Automate", evidence: "Uniper" },
+      { name: "Power Apps", evidence: "Uniper" },
+      { name: "Microsoft Copilot Studio", evidence: "Uniper knowledge hub agent" },
+      { name: "Microsoft 365 Copilot adoption and training", evidence: "Uniper, Bachelor's thesis" },
     ],
   },
   {
     id: "business",
     title: "Business and process",
+    icon: "route",
     skills: [
-      { name: "Process analysis and optimization", usedAt: ["uniper"] },
-      { name: "Lean Six Sigma (Yellow Belt)", usedAt: ["uniper"], note: "Uniper training, 2026" },
-      { name: "Supply chain and logistics", usedAt: ["projects", "study"], note: "B.Sc. Mobility and Logistics" },
-      { name: "Survey analysis", usedAt: ["continental", "study"], note: "UTAUT framework in the thesis" },
-      { name: "Training and presenting to stakeholders", usedAt: ["uniper", "continental"] },
+      { name: "Process analysis and optimization", evidence: "Uniper Operational Excellence" },
+      { name: "Lean Six Sigma (Yellow Belt)", evidence: "Uniper training, 2026" },
+      { name: "Supply chain and logistics", evidence: "B.Sc. Mobility and Logistics" },
+      { name: "Survey analysis (UTAUT)", evidence: "Bachelor's thesis" },
+      { name: "Stakeholder training and presentations", evidence: "Uniper, Continental" },
     ],
   },
 ];
-
-/** The tools a recruiter scans for first. Shown in the hero and as the matrix headline. */
-export const coreStack = ["Power BI", "DAX", "Power Query", "SQL", "SAP ERP data", "Excel / VBA", "Power Automate"];

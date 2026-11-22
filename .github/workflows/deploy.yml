@@ -43,7 +43,6 @@ jobs:
             pages=$(pdfinfo "cv/$name.pdf" | awk '/^Pages:/ {print $2}')
             if [ "$pages" != "1" ]; then echo "::warning::$name.pdf has $pages pages (target: 1)"; fi
             cp "cv/$name.pdf" "public/cv/$name.pdf"
-            cp "cv/$name.tex" "public/cv/$name.tex"
             pdftoppm -png -scale-to-x 1000 -scale-to-y -1 -f 1 -l 1 -singlefile "cv/$name.pdf" "public/cv/$name-preview"
           done
 

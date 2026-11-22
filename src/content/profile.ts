@@ -4,8 +4,6 @@
 export const profile = {
   name: "Sohrab Rana",
   role: "Junior Business Intelligence & Data Analyst",
-  /** Short form for tight spaces (header, social cards). */
-  roleShort: "Junior BI & Data Analyst",
   /** Used in <title>, Open Graph and structured data. */
   seoTitle: "Sohrab Rana – Junior BI & Data Analyst (Power BI, SQL, SAP) in Germany",
   seoDescription:
@@ -46,7 +44,6 @@ export const profile = {
   lede: "I build Power BI reports from SAP, SQL and Microsoft 365 data, and I check the numbers before anyone else sees them. At Continental that meant weekly European KPI reports for engineering teams. At Uniper, management dashboards for the Transformation & Excellence team.",
 
   location: "Duisburg, North Rhine-Westphalia",
-  locationShort: "Duisburg, NRW",
   /** Everything in this file is public: it is shipped to every visitor's browser.
    *  Never add a home address, birthday, ID numbers or internal employer data here
    *  (the only exception is the Impressum address below, which the law requires). */
@@ -77,6 +74,7 @@ export const profile = {
     "At Continental in Lindau I joined the Application Engineering Excellence department as a Power BI intern. I built and maintained dashboards and data models for 8 engineering projects: weekly European KPI reports, prototype cost reporting, EBOM analysis and surveys. The data came from SAP ERP, SQL databases, SharePoint, JIRA and Excel, and the reports went to colleagues in Europe, North America, China, Japan, Korea and Romania. When the internship ended, I stayed on remotely for three more months to continue the dashboard work and the SAP and Excel data validation.",
     "Then I spent a year as a working student in Uniper's Transformation & Excellence team in Düsseldorf. I built and published five Power BI dashboards for management and operational KPIs, automated routine work with Power Automate and Power Apps, and set up a Copilot Studio agent for the team's SharePoint knowledge hub. I also ran four hands-on Copilot training sessions for colleagues, and wrote my Bachelor's thesis there on Microsoft 365 Copilot adoption.",
     "Before all of this, I spent three and a half years working part-time on the shop floor at H&M in Cologne, most of it alongside full-time studies. That job is where I got used to working in German every day, in a team and with customers.",
+    "I'm now looking for a full-time junior role in Germany as a BI Analyst, Power BI Analyst, Data Analyst, Business Analyst or Supply Chain Analyst, or in digital transformation. I can start immediately and I'm open to relocation. I'm also enrolled in the M.Sc. Operations Research and Business Analytics at Otto von Guericke University Magdeburg, and open to working student positions and internships.",
   ],
   /** Short German profile, shown in a collapsible block in the About section. */
   aboutDe:

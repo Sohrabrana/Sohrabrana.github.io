@@ -15,8 +15,6 @@ const pages = [
   ["/", "1.0"],
   [`/cv/en${slash}`, "0.8"],
   [`/cv/de${slash}`, "0.8"],
-  [`/cv/en/source${slash}`, "0.3"],
-  [`/cv/de/source${slash}`, "0.3"],
 ];
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

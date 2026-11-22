@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Download, ExternalLink, FileCode2 } from "lucide-react";
+import { ArrowLeft, Download, ExternalLink } from "lucide-react";
 import { getCv } from "@/content/cv";
 
 export function CvViewer({ id }: { id: "en" | "de" }) {
@@ -21,23 +21,16 @@ export function CvViewer({ id }: { id: "en" | "de" }) {
           <a
             href={cv.pdf}
             download
-            className="inline-flex h-11 items-center gap-2 rounded-lg bg-signal px-4 font-semibold text-signal-ink hover:brightness-95"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-signal px-4 font-semibold text-signal-ink hover:brightness-95"
           >
             <Download className="size-4" aria-hidden="true" />
             {cv.labels.download}
           </a>
-          <Link
-            href={`/cv/${cv.id}/source`}
-            className="inline-flex h-11 items-center gap-2 rounded-lg border border-ink/80 px-4 font-semibold hover:bg-ink hover:text-paper"
-          >
-            <FileCode2 className="size-4" aria-hidden="true" />
-            {cv.labels.source}
-          </Link>
         </div>
       </div>
 
       {/* Desktop: embedded PDF. Phones: page image plus a button that opens the PDF in the browser's viewer. */}
-      <div className="mt-8 overflow-hidden rounded-lg border border-line bg-surface">
+      <div className="mt-8 overflow-hidden rounded-2xl border border-line bg-surface">
         <object data={`${cv.pdf}#view=FitH`} type="application/pdf" aria-label={cv.title} className="hidden h-[85vh] w-full md:block">
           <PreviewImage id={id} />
         </object>

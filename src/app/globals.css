@@ -3,91 +3,68 @@
 /* Dark mode follows the data-theme attribute set before first paint (see layout.tsx). */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* ---------- Design tokens ----------
-   Same palette as the CV PDFs (cv/*.tex): navy ink, report blue, signal yellow.
-   Type: IBM Plex Sans Condensed for display (the CV name uses it too), IBM Plex Sans for text. */
+/* ---------- Design tokens ---------- */
 :root,
 [data-theme="light"] {
-  --paper: #eef1f5;
+  --paper: #eef1f4;
   --surface: #ffffff;
-  --sunk: #e4e9f0;
   --ink: #0f1e33;
-  --muted: #4b5b72;
-  --line: #d2d9e3;
-  --line-strong: #aeb9c8;
+  --muted: #4c5c73;
+  --line: #d3dae3;
   --route: #2450b8;
-  --route-soft: #e2e9f8;
+  --route-soft: #e3eafa;
   --signal: #f2b705;
-  --signal-soft: #fdf3cf;
   --signal-ink: #0f1e33;
   --study: #5d6f8f;
   --parttime: #a9b4c5;
   --grid: #dfe4eb;
   --band: #0f1e33;
-  --band-ink: #eef1f5;
-  --band-muted: #b7c3d6;
+  --band-ink: #eef1f4;
   color-scheme: light;
 }
 
 [data-theme="dark"] {
   --paper: #0c1626;
   --surface: #132036;
-  --sunk: #0f1a2d;
   --ink: #e7edf5;
-  --muted: #a3b1c5;
+  --muted: #a1afc3;
   --line: #26364f;
-  --line-strong: #3a4d6b;
-  --route: #8aabff;
+  --route: #82a5ff;
   --route-soft: #1b2b4a;
   --signal: #f6c431;
-  --signal-soft: #3a3214;
   --signal-ink: #0c1626;
   --study: #8c9dba;
   --parttime: #4a5d7e;
   --grid: #1c2a42;
   --band: #132036;
   --band-ink: #e7edf5;
-  --band-muted: #a3b1c5;
   color-scheme: dark;
 }
 
 @theme inline {
   --color-paper: var(--paper);
   --color-surface: var(--surface);
-  --color-sunk: var(--sunk);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
-  --color-line-strong: var(--line-strong);
   --color-route: var(--route);
   --color-route-soft: var(--route-soft);
   --color-signal: var(--signal);
-  --color-signal-soft: var(--signal-soft);
   --color-signal-ink: var(--signal-ink);
   --color-study: var(--study);
   --color-parttime: var(--parttime);
   --color-grid: var(--grid);
   --color-band: var(--band);
   --color-band-ink: var(--band-ink);
-  --color-band-muted: var(--band-muted);
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-condensed), var(--font-body), ui-sans-serif, sans-serif;
-
-  /* Type scale (ratio 1.25 on a 17px base) */
-  --text-step--1: 0.85rem;
-  --text-step-0: 1.0625rem;
-  --text-step-1: 1.33rem;
-  --text-step-2: 1.66rem;
-  --text-step-3: 2.075rem;
-  --text-step-4: 2.6rem;
-  --text-step-5: 3.25rem;
 }
 
 /* ---------- Base ---------- */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -99,7 +76,6 @@ html {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
@@ -108,25 +84,11 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: var(--text-step-0);
+  font-size: 1.0625rem;
   line-height: 1.6;
   font-feature-settings: "kern", "liga";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  text-wrap: balance;
-}
-
-p,
-li,
-dd,
-blockquote {
-  text-wrap: pretty;
 }
 
 ::selection {
@@ -137,13 +99,13 @@ blockquote {
 :focus-visible {
   outline: 2px solid var(--route);
   outline-offset: 3px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
-/* Display type: IBM Plex Sans Condensed, tight like the CV header. */
+/* Display type: condensed, tight, like signage. */
 .font-display {
   font-family: var(--font-display);
-  letter-spacing: -0.012em;
+  letter-spacing: -0.01em;
 }
 
 .tabular {
@@ -161,64 +123,11 @@ blockquote {
   text-decoration-thickness: 2px;
 }
 
-/* Hatched fill used for "extension" and "ongoing" segments in the career chart */
+/* Hatched fill used for "extension" and "ongoing" segments in the chart */
 .hatch {
-  background-image: repeating-linear-gradient(-45deg, currentColor 0 2px, transparent 2px 6px);
-}
-
-/* Dotted canvas behind the hero model diagram (like a report designer's model view). */
-@utility model-canvas {
-  background-color: var(--sunk);
-  background-image: radial-gradient(color-mix(in oklab, var(--line-strong) 70%, transparent) 1px, transparent 1.2px);
-  background-size: 16px 16px;
-}
-
-/* Relationship lines in the hero model diagram draw in once on load. */
-@keyframes draw-line {
-  from {
-    stroke-dashoffset: 1;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes table-in {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-.model-line {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw-line 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-.model-table {
-  opacity: 0;
-  animation: table-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-@media (prefers-reduced-motion: reduce) {
-  .model-line {
-    stroke-dashoffset: 0;
-  }
-  .model-table {
-    opacity: 1;
-  }
-}
-
-/* Experience tabs: the newly selected role fades in. */
-.tab-in {
-  animation: table-in 0.3s ease-out;
-}
-
-/* German summary toggle in the About section */
-details > summary {
-  list-style: none;
-}
-details > summary::-webkit-details-marker {
-  display: none;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    currentColor 0 2px,
+    transparent 2px 6px
+  );
 }
