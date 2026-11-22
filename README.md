@@ -15,10 +15,10 @@ Every change you commit to `main` rebuilds and republishes the whole site automa
 | --- | --- |
 | English CV | `cv/Sohrab_Rana_CV_English.tex` |
 | German CV | `cv/Sohrab_Rana_CV_German.tex` |
-| Intro, About, contact details, "open to work" badge | `src/content/profile.ts` |
+| Intro, About (English and German), recruiter quick facts, contact details, "open to work" badge | `src/content/profile.ts` |
 | Jobs (also the career chart) | `src/content/experience.ts` |
-| Projects | `src/content/projects.ts` |
-| Skills | `src/content/skills.ts` |
+| Projects (four case studies plus "More work") | `src/content/projects.ts` |
+| Skills matrix (where each skill was used) | `src/content/skills.ts` |
 | Education and certifications | `src/content/education.ts` |
 | Reference quotes | `src/content/references.ts` |
 | Portrait | upload a new `public/images/sohrab-rana.jpg` (Add file → Upload files, same name) |
@@ -30,7 +30,7 @@ Tips:
 - **If a run fails** (red cross in Actions): click it to see the message. The usual causes are a LaTeX typo (a missing `}`), a missing comma or quote in a `.ts` file, or the privacy check finding a phone number, birth date or ID number. Fix the file and commit again; the previous version stays online meanwhile.
 - **Keep both CVs to one page.** The run shows a warning if a CV grows to two pages.
 
-- **Website:** Next.js 16 (App Router), TypeScript, Tailwind CSS 4 and Motion. All pages are static.
+- **Website:** Next.js 16 (App Router), TypeScript and Tailwind CSS 4. All pages are static; animations are plain CSS. Fonts: IBM Plex Sans and IBM Plex Sans Condensed (self-hosted, the same family as the CVs).
 - **CVs:** `cv/Sohrab_Rana_CV_English.tex` and `cv/Sohrab_Rana_CV_German.tex` (pdfLaTeX, one A4 page each, ATS-friendly)
 - **Published PDFs:** `public/cv/` (the website links to these files)
 
@@ -70,10 +70,10 @@ Every text on the site lives in `src/content/`. Components never need to change 
 
 | What you want to change | File |
 | --- | --- |
-| Name, headline, intro, About text, quick facts, email, links, "open to work" badge | `src/content/profile.ts` |
-| Work experience (also feeds the career chart in the hero) | `src/content/experience.ts` |
-| Projects | `src/content/projects.ts` |
-| Skills | `src/content/skills.ts` |
+| Name, headline, intro, About text, German short profile, recruiter quick facts, email, links, "open to work" badge | `src/content/profile.ts` |
+| Work experience (also feeds the career chart and the hero diagram) | `src/content/experience.ts` |
+| Projects (four case studies plus "More work") | `src/content/projects.ts` |
+| Skills matrix (where each skill was used) | `src/content/skills.ts` |
 | Education and certifications | `src/content/education.ts` |
 | Quotes from reference letters | `src/content/references.ts` |
 | CV card texts and file names | `src/content/cv.ts` |
@@ -81,26 +81,39 @@ Every text on the site lives in `src/content/`. Components never need to change 
 
 ### Add a project
 
-Add an object to the `projects` array in `src/content/projects.ts`:
+Projects live in `src/content/projects.ts`. Keep `featured: true` for the **four strongest** projects only: they are shown as full case studies (question, what I did, results, visual evidence). Everything else goes under "More work" with `featured: false`.
 
 ```ts
 {
   id: "my-new-project",                 // unique, lowercase, no spaces
   title: "Sales forecast dashboard",
-  context: "Portfolio project, public data", // or "Company name, workplace project"
+  context: "Portfolio project, public data", // or "Company name, internship"
   kind: "portfolio",                    // "workplace" | "academic" | "portfolio"
   period: "2027",
-  featured: false,                      // true = large case study, false = compact list
-  tags: ["Power BI", "SQL"],            // used by the filter buttons
-  summary: "One or two sentences about the problem and the result.",
-  built: ["What you built, one item per line"],
-  outcomes: ["Only results you can prove"],
+  featured: false,                      // true = case study (max. four), false = "More work"
+  tags: ["BI & reporting", "SQL"],      // filter buttons: "BI & reporting" | "Supply chain" | "Digital transformation" | "SQL"
+  problem: "The business question in one or two sentences (for 'More work': the summary).",
+  did: ["What you did yourself, one item per line"],   // case studies only
+  results: ["Only results you can prove"],             // optional
   tools: ["Power BI", "DAX", "SQL"],
   links: [{ label: "GitHub", href: "https://github.com/Sohrabrana/..." }],
+  // evidence: case studies only. Either a schematic of the setup...
+  evidence: {
+    type: "flow",
+    title: "How the reporting fits together",
+    steps: [{ title: "Sources", items: ["SAP ERP", "Excel"] }, { title: "Reports", items: ["Power BI dashboard"] }],
+    caption: "Schematic of the setup. No company data is shown.",
+  },
+  // ...or charts drawn from numbers that are published in the project's own repository:
+  // evidence: { type: "charts", caption: "...", charts: [{ title, kind: "bars" | "line", dimension, measure, unit, min, max, data: [{ label, value, note?, highlight? }] }] },
 },
 ```
 
-Order in the file = order on the page. New filter topics go into `projectTags` in the same file (and the `ProjectTag` type in `src/content/types.ts`).
+Order in the file = order on the page. **Never put invented numbers or screenshots of company data into a project.** Workplace projects use a `flow` schematic; charts are only for public projects whose results are on GitHub.
+
+### Update the skills matrix
+
+Each skill in `src/content/skills.ts` lists where it was actually used: `usedAt: ["uniper", "continental", "projects", "study"]`. Add a skill only when you can point to one of these places. `coreStack` is the short tool list shown in the hero diagram.
 
 ### Add a certification
 
@@ -190,6 +203,6 @@ Everything in `public/`, `src/` and `cv/` is published: on the website, in the d
 ## Quality checks done
 
 - `npm run lint`, `npm run typecheck` and `npm run build` pass; all routes are prerendered as static pages.
-- Lighthouse (local production build): desktop 100 / 100 / 100 / 100, mobile 89 performance, 100 accessibility, best practices and SEO.
+- Lighthouse: see the latest numbers in the pull request that introduced the current design.
 - Both CVs compile to one A4 page. Text extraction was checked with `pdftotext`, `pdfminer.six` and `pypdf`: reading order, umlauts and ligatures are correct.
 - No ATS score is claimed: there is no standard ATS, and scores from online checkers are not comparable. The CVs follow the common parsing rules instead (single column, standard headings, real text, consistent dates, no tables or graphics).

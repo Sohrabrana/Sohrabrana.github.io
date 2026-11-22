@@ -6,22 +6,22 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 
-// Self-hosted fonts (no request to Google; GDPR-friendly).
-const barlow = localFont({
+// Self-hosted fonts (no request to Google; GDPR-friendly). IBM Plex, the same family as the CV PDFs.
+const plexSans = localFont({
   src: [
-    { path: "./fonts/barlow-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/barlow-latin-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/barlow-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/ibm-plex-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/ibm-plex-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
   ],
   variable: "--font-body",
   display: "swap",
 });
 
-const barlowCondensed = localFont({
+const plexCondensed = localFont({
   src: [
-    { path: "./fonts/barlow-condensed-latin-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/barlow-condensed-latin-600-normal.woff2", weight: "600", style: "normal" },
-    { path: "./fonts/barlow-condensed-latin-700-normal.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/ibm-plex-sans-condensed-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/ibm-plex-sans-condensed-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/ibm-plex-sans-condensed-latin-700-normal.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-condensed",
   display: "swap",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#eef1f4" },
+    { media: "(prefers-color-scheme: light)", color: "#eef1f5" },
     { media: "(prefers-color-scheme: dark)", color: "#0c1626" },
   ],
 };
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="en"
       data-theme="light"
       suppressHydrationWarning
-      className={`${barlow.variable} ${barlowCondensed.variable}`}
+      className={`${plexSans.variable} ${plexCondensed.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-dvh antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-signal focus:px-4 focus:py-2 focus:font-medium focus:text-signal-ink"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-signal focus:px-4 focus:py-2 focus:font-medium focus:text-signal-ink"
         >
           Skip to content
         </a>

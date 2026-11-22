@@ -14,12 +14,12 @@ export function EducationSection() {
               <span className="block">{e.status}</span>
             </p>
             <div>
-              <h3 className="flex items-start gap-2.5 font-display text-[1.75rem] font-semibold leading-tight">
+              <h3 className="flex items-start gap-2.5 font-display text-[1.75rem] font-semibold leading-[1.15]">
                 <GraduationCap className="mt-1 size-6 shrink-0 text-route" aria-hidden="true" />
                 {e.degree}
               </h3>
-              <p className="mt-1 text-lg text-route">{e.school}</p>
-              <ul className="mt-3 max-w-[44rem] space-y-1.5 text-muted">
+              <p className="mt-1 text-[1.08rem] font-medium text-route">{e.school}</p>
+              <ul className="mt-3 max-w-[44rem] space-y-1.5 leading-relaxed text-muted">
                 {e.details.map((d) => (
                   <li key={d}>{d}</li>
                 ))}
@@ -30,13 +30,13 @@ export function EducationSection() {
       </ol>
 
       <div className="mt-16" id="certifications">
-        <h3 className="flex items-center gap-2.5 font-display text-3xl font-semibold">
+        <h3 className="flex items-center gap-2.5 font-display text-[2rem] font-semibold">
           <Award className="size-6 text-route" aria-hidden="true" />
           Certifications
         </h3>
-        <ul className="mt-5 divide-y divide-line border-y border-line">
+        <ul className="mt-5 grid border-t border-line md:grid-cols-2 md:gap-x-10">
           {certifications.map((c) => (
-            <li key={c.title} className="grid gap-1 py-3.5 sm:grid-cols-[6.5rem_minmax(0,1fr)] sm:gap-6">
+            <li key={c.title} className="grid gap-1 border-b border-line py-3.5 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-4">
               <span className="text-sm text-muted tabular">{formatYm(c.date)}</span>
               <span>
                 <span className="font-medium">{c.title}</span>

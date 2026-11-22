@@ -29,7 +29,7 @@ export function CopyButton({ value, label, tone = "dark" }: Props) {
       : "h-11 border-line px-4 text-ink hover:border-ink/50";
 
   return (
-    <button type="button" onClick={copy} className={`inline-flex items-center gap-2 rounded-full border font-medium ${styles}`}>
+    <button type="button" onClick={copy} className={`inline-flex items-center gap-2 rounded-lg border font-medium ${styles}`}>
       {copied ? <Check className="size-4" aria-hidden="true" /> : <Copy className="size-4" aria-hidden="true" />}
       <span aria-live="polite">{copied ? (label.startsWith("Quell") ? "Kopiert" : "Copied") : label}</span>
     </button>

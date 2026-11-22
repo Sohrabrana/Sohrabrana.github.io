@@ -17,6 +17,9 @@ const nav = [
   { id: "contact", label: "Contact" },
 ];
 
+// Sections without their own menu entry count towards the entry before them.
+const parentOf: Record<string, string> = { references: "experience", cv: "education" };
+
 function useActiveSection(enabled: boolean) {
   const [active, setActive] = useState<string | null>(null);
   useEffect(() => {
@@ -29,7 +32,7 @@ function useActiveSection(enabled: boolean) {
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-        if (visible) setActive(visible.target.id);
+        if (visible) setActive(parentOf[visible.target.id] ?? visible.target.id);
       },
       { rootMargin: "-30% 0px -60% 0px" },
     );
@@ -68,7 +71,7 @@ function CvMenu() {
         aria-expanded={open}
         aria-controls={menuId}
         onClick={() => setOpen((o) => !o)}
-        className="inline-flex h-10 items-center gap-1.5 rounded-full bg-signal px-4 text-[0.95rem] font-semibold text-signal-ink transition-[filter] hover:brightness-95"
+        className="inline-flex h-10 items-center gap-1.5 rounded-lg bg-signal px-4 text-[0.95rem] font-semibold text-signal-ink transition-[filter] hover:brightness-95"
       >
         Download CV
         <ChevronDown className={`size-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
@@ -76,7 +79,7 @@ function CvMenu() {
       {open && (
         <div
           id={menuId}
-          className="absolute right-0 top-12 w-72 rounded-xl border border-line bg-surface p-2 shadow-[0_12px_32px_-12px_rgb(15_30_51/0.35)]"
+          className="absolute right-0 top-12 w-72 rounded-lg border border-line bg-surface p-2 shadow-[0_12px_32px_-12px_rgb(15_30_51/0.35)]"
         >
           <ul className="space-y-1">
             {cvFiles.map((cv) => (
@@ -122,8 +125,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/85 backdrop-blur-md">
       <div ref={mobileRef} className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-5 sm:px-8">
-        <Link href="/" className="font-display text-xl font-semibold tracking-tight" aria-label={`${profile.name}, home`}>
-          {profile.name}
+        <Link href="/" className="flex flex-col leading-none">
+          <span className="font-display text-[1.3rem] font-bold tracking-[-0.01em]">{profile.name}</span>
+          <span className="mt-1 hidden text-[0.78rem] text-muted min-[380px]:block">
+            <span className="sr-only">, </span>
+            {profile.roleShort}
+          </span>
         </Link>
 
         <nav aria-label="Main" className="ml-auto hidden lg:block">
@@ -135,7 +142,7 @@ export function SiteHeader() {
                   <Link
                     href={`/#${item.id}`}
                     aria-current={current ? "location" : undefined}
-                    className={`relative rounded-full px-3 py-2 text-[0.95rem] transition-colors hover:text-route ${
+                    className={`relative rounded-md px-3 py-2 text-[0.95rem] transition-colors hover:text-route ${
                       current ? "text-route" : "text-ink"
                     }`}
                   >
@@ -157,7 +164,7 @@ export function SiteHeader() {
           <ThemeToggle />
           <button
             type="button"
-            className="grid size-10 place-items-center rounded-full hover:bg-route-soft lg:hidden"
+            className="grid size-10 place-items-center rounded-lg hover:bg-route-soft lg:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -194,7 +201,7 @@ export function SiteHeader() {
                   href={cv.pdf}
                   download
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-full bg-signal px-4 py-3 font-semibold text-signal-ink"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-signal px-4 py-3 font-semibold text-signal-ink"
                 >
                   <Download className="size-4" aria-hidden="true" />
                   {cv.title} (PDF)

@@ -3,25 +3,35 @@
 
 export const profile = {
   name: "Sohrab Rana",
-  role: "Business Intelligence & Data Analyst",
+  role: "Junior Business Intelligence & Data Analyst",
+  /** Short form for tight spaces (header, social cards). */
+  roleShort: "Junior BI & Data Analyst",
   /** Used in <title>, Open Graph and structured data. */
-  seoTitle: "Sohrab Rana – Business Intelligence & Data Analyst (Power BI, SQL) in Germany",
+  seoTitle: "Sohrab Rana – Junior BI & Data Analyst (Power BI, SQL, SAP) in Germany",
   seoDescription:
-    "Business Intelligence and Data Analyst in Duisburg, Germany. Power BI dashboards, DAX, Power Query, SQL and SAP ERP data from work at Uniper and Continental. Available for full-time roles in Germany.",
+    "Junior BI and Data Analyst in Duisburg, NRW. Power BI, DAX, SQL and SAP ERP data from work at Uniper and Continental. Available now for full-time roles in Germany.",
   keywords: [
     "Sohrab Rana",
+    "Junior BI Analyst",
     "Business Intelligence Analyst",
-    "Data Analyst",
+    "Power BI Analyst",
     "Power BI Developer",
+    "Data Analyst",
     "Business Analyst",
     "Supply Chain Analyst",
+    "Digital Transformation",
     "Datenanalyst",
+    "Datenanalyse",
+    "Business Intelligence",
+    "Berufseinsteiger",
+    "Werkstudent",
     "Power BI",
     "DAX",
     "Power Query",
     "SQL",
     "SAP ERP",
     "KPI reporting",
+    "Kennzahlen",
     "Power Automate",
     "Duisburg",
     "NRW",
@@ -31,11 +41,12 @@ export const profile = {
   /** Shown above the name. Set `open: false` when you are no longer looking. */
   availability: {
     open: true,
-    label: "Open to full-time roles in Germany",
+    label: "Available now for full-time roles in Germany",
   },
-  lede: "I turn SAP, SQL and Microsoft 365 data into Power BI reports that management and operations teams use. Previously at Uniper and Continental.",
+  lede: "I build Power BI reports from SAP, SQL and Microsoft 365 data, and I check the numbers before anyone else sees them. At Continental that meant weekly European KPI reports for engineering teams. At Uniper, management dashboards for the Transformation & Excellence team.",
 
   location: "Duisburg, North Rhine-Westphalia",
+  locationShort: "Duisburg, NRW",
   /** Everything in this file is public: it is shipped to every visitor's browser.
    *  Never add a home address, birthday, ID numbers or internal employer data here
    *  (the only exception is the Impressum address below, which the law requires). */
@@ -52,7 +63,7 @@ export const profile = {
   siteUrl: "https://sohrabrana.github.io",
   /** Where the site is hosted (shown on the Datenschutz page). */
   hosting: { service: "GitHub Pages", company: "GitHub, Inc. (USA)" },
-  /** Repository with the site source, shown in the footer. Empty = hidden (the repository is private). */
+  /** Repository with the site source, shown in the footer. Empty = hidden. */
   sourceRepo: "",
 
   photo: {
@@ -60,19 +71,29 @@ export const profile = {
     alt: "Portrait of Sohrab Rana in a dark blazer and white shirt",
   },
 
+  /** About section. The first paragraph is shown larger. */
   about: [
-    "I'm a Business Intelligence and Data Analyst based in Duisburg. My work sits between data and the people who decide with it: I take data from SAP ERP, SQL databases, SharePoint and Excel, model it in Power BI, and build the reports teams look at in their regular meetings.",
-    "I have worked in Germany since 2021, first part-time in retail in Cologne, a job I kept throughout my Bachelor's in Mobility and Logistics at Rhine-Waal University. Logistics taught me how supply chains and processes run. My internship at Continental in Lindau showed me how much of that work depends on good reporting: I built and maintained Power BI dashboards for 8 engineering projects, with stakeholders in Europe, North America, China, Japan and Korea.",
-    "At Uniper in Düsseldorf I spent a year as a working student in Transformation & Excellence. I built five Power BI dashboards for management and operational KPIs, automated routine work with Power Automate, and set up a Copilot Studio agent for the team's SharePoint knowledge hub. I also ran hands-on Copilot training for colleagues, and wrote my Bachelor's thesis on Microsoft Copilot adoption at Uniper.",
-    "I'm now looking for a full-time position in Germany as a BI Analyst, Data Analyst, Power BI Developer, Business Analyst or Supply Chain Analyst. I'm also enrolled in the M.Sc. Operations Research and Business Analytics at Otto von Guericke University Magdeburg.",
+    "I came to data through logistics. My Bachelor's in Mobility and Logistics taught me how orders, materials and processes move through a company. My internship at Continental showed me how much of that depends on reports people can trust, and that has been my work ever since.",
+    "At Continental in Lindau I joined the Application Engineering Excellence department as a Power BI intern. I built and maintained dashboards and data models for 8 engineering projects: weekly European KPI reports, prototype cost reporting, EBOM analysis and surveys. The data came from SAP ERP, SQL databases, SharePoint, JIRA and Excel, and the reports went to colleagues in Europe, North America, China, Japan, Korea and Romania. When the internship ended, I stayed on remotely for three more months to continue the dashboard work and the SAP and Excel data validation.",
+    "Then I spent a year as a working student in Uniper's Transformation & Excellence team in Düsseldorf. I built and published five Power BI dashboards for management and operational KPIs, automated routine work with Power Automate and Power Apps, and set up a Copilot Studio agent for the team's SharePoint knowledge hub. I also ran four hands-on Copilot training sessions for colleagues, and wrote my Bachelor's thesis there on Microsoft 365 Copilot adoption.",
+    "Before all of this, I spent three and a half years working part-time on the shop floor at H&M in Cologne, most of it alongside full-time studies. That job is where I got used to working in German every day, in a team and with customers.",
   ],
+  /** Short German profile, shown in a collapsible block in the About section. */
+  aboutDe:
+    "Junior Business Intelligence & Data Analyst mit Praxiserfahrung bei Uniper (Werkstudent, Transformation & Excellence) und Continental (Praktikum, Power BI). Schwerpunkte: Power BI, DAX, Power Query, SQL, SAP-ERP-Daten, KPI-Reporting und Prozessautomatisierung mit Power Automate. B.Sc. Mobility and Logistics (Hochschule Rhein-Waal), seit Oktober 2026 M.Sc. Operations Research and Business Analytics (Otto-von-Guericke-Universität Magdeburg). Ab sofort verfügbar für eine Vollzeitstelle in Deutschland und offen für einen Umzug; Werkstudenten- und Praktikumsstellen kommen ebenfalls infrage. Deutsch: B1 (telc), B2 in Vorbereitung.",
 
+  /** Quick facts for recruiters, shown next to the About text. */
   facts: [
-    { label: "Based in", value: "Duisburg, NRW" },
-    { label: "Availability", value: "Immediately, full-time" },
-    { label: "Relocation", value: "Open to relocation within Germany" },
+    {
+      label: "Looking for",
+      value: "Junior BI Analyst, Power BI Analyst, Data Analyst, Business Analyst, Supply Chain Analyst or a digital transformation role",
+    },
+    { label: "Start date", value: "Immediately, full-time" },
+    { label: "Also open to", value: "Working student positions and internships" },
+    { label: "Location", value: "Duisburg, NRW. Open to relocation anywhere in Germany" },
     { label: "Work model", value: "On-site, hybrid or remote" },
-    { label: "Languages", value: "English C1, German B1 (B2 in progress), Bengali native" },
+    { label: "Experience", value: "1.5 years in BI and reporting at Uniper and Continental" },
+    { label: "Languages", value: "English C1, German B1 (telc, B2 in progress), Bengali native" },
   ],
 
   /** Shown in the Impressum. Fill in a postal address before publishing in Germany (§ 5 DDG). */
