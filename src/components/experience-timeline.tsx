@@ -90,6 +90,11 @@ export function ExperienceTimeline({ roles }: { roles: Role[] }) {
               <span className="mt-0.5 block whitespace-nowrap text-sm text-muted tabular">
                 {formatRange(r.start, r.end)}
               </span>
+              {r.extension && (
+                <span className="mt-0.5 block whitespace-nowrap text-xs text-muted tabular">
+                  + voluntary extension to {formatYm(r.extension.end)}
+                </span>
+              )}
             </button>
           );
         })}
@@ -145,8 +150,8 @@ function RoleDetails({ role: r }: { role: Role }) {
         </span>
         {r.department && <span>{r.department}</span>}
         {r.extension && (
-          <span>
-            {r.extension.label} until {formatYm(r.extension.end)}
+          <span className="tabular">
+            {r.extension.label}: {formatRange(r.extension.start, r.extension.end)}
           </span>
         )}
       </p>

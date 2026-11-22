@@ -21,6 +21,13 @@ const barColor: Record<TimelineRow["kind"], string> = {
   parttime: "bg-parttime",
 };
 
+/** "Jan – Apr 2025" when both months are in the same year, otherwise "Dec 2024 – Feb 2025". */
+function shortRange(from: string, to: string) {
+  return from.slice(0, 4) === to.slice(0, 4)
+    ? `${formatYm(from).split(" ")[0]} – ${formatYm(to)}`
+    : `${formatYm(from)} – ${formatYm(to)}`;
+}
+
 export function CareerChart({ rows, axisStart, axisEnd }: Props) {
   const reduce = useReducedMotion();
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -47,6 +54,12 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
               {kindLabels[k]}
             </li>
           ))}
+          {rows.some((r) => r.extension) && (
+            <li className="flex items-center gap-2">
+              <span className="hatch inline-block h-2.5 w-5 rounded-sm text-route/70 ring-1 ring-inset ring-route/40" aria-hidden="true" />
+              Voluntary extension
+            </li>
+          )}
         </ul>
       </figcaption>
 
@@ -122,6 +135,15 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
                       }}
                     />
                   )}
+                  {row.extension && (
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-y-0 hidden items-center whitespace-nowrap pl-2 text-xs text-muted lg:flex"
+                      style={{ left: `${pct(row.extension.end) + span(row.extension.end, row.extension.end)}%` }}
+                    >
+                      Voluntary extension, {shortRange(row.extension.start, row.extension.end)}
+                    </span>
+                  )}
                 </div>
               </li>
             );
@@ -137,7 +159,7 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
             <span className="tabular">
               {formatRange(active.start, active.end)}
               {active.extension &&
-                `, plus ${active.extension.label.toLowerCase()} until ${formatYm(active.extension.end)}`}
+                `, plus ${active.extension.label.toLowerCase()} ${formatYm(active.extension.start)} – ${formatYm(active.extension.end)}`}
             </span>
           </>
         ) : (
