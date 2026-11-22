@@ -41,7 +41,9 @@ export const profile = {
     open: true,
     label: "Available now for full-time roles in Germany",
   },
-  lede: "I build Power BI reports from SAP, SQL and Microsoft 365 data, and I check the numbers before anyone else sees them. At Continental that meant weekly European KPI reports for engineering teams. At Uniper, management dashboards for the Transformation & Excellence team.",
+  /** Large statement under the role in the hero. */
+  headline: "Turning complex business data into clear insights, reliable reports, and better decisions.",
+  lede: "I build Power BI dashboards and reporting solutions using SAP, SQL, Excel, and Microsoft 365 data. At Continental, I supported international engineering teams with KPI reporting and data analysis. At Uniper, I developed management dashboards and automated business processes to make reporting more efficient.",
 
   location: "Duisburg, North Rhine-Westphalia",
   /** Everything in this file is public: it is shipped to every visitor's browser.
@@ -68,14 +70,23 @@ export const profile = {
     alt: "Portrait of Sohrab Rana in a dark blazer and white shirt",
   },
 
-  /** About section. The first paragraph is shown larger. */
+  /** About section. The opening line is shown large; `highlight` gets the yellow marker. */
+  aboutLead: {
+    text: "I started in logistics, but discovered that what interests me most is",
+    highlight: "the data behind better business decisions.",
+  },
+  /** Paragraphs in order. An item written as { quote: "..." } is shown as a highlighted pull quote. */
   about: [
-    "I came to data through logistics. My Bachelor's in Mobility and Logistics taught me how orders, materials and processes move through a company. My internship at Continental showed me how much of that depends on reports people can trust, and that has been my work ever since.",
-    "At Continental in Lindau I joined the Application Engineering Excellence department as a Power BI intern. I built and maintained dashboards and data models for 8 engineering projects: weekly European KPI reports, prototype cost reporting, EBOM analysis and surveys. The data came from SAP ERP, SQL databases, SharePoint, JIRA and Excel, and the reports went to colleagues in Europe, North America, China, Japan, Korea and Romania. When the internship ended, I stayed on remotely for three more months to continue the dashboard work and the SAP and Excel data validation.",
-    "Then I spent a year as a working student in Uniper's Transformation & Excellence team in Düsseldorf. I built and published five Power BI dashboards for management and operational KPIs, automated routine work with Power Automate and Power Apps, and set up a Copilot Studio agent for the team's SharePoint knowledge hub. I also ran four hands-on Copilot training sessions for colleagues, and wrote my Bachelor's thesis there on Microsoft 365 Copilot adoption.",
-    "Before all of this, I spent three and a half years working part-time on the shop floor at H&M in Cologne, most of it alongside full-time studies. That job is where I got used to working in German every day, in a team and with customers.",
-    "I'm now looking for a full-time junior role in Germany as a BI Analyst, Power BI Analyst, Data Analyst, Business Analyst or Supply Chain Analyst, or in digital transformation. I can start immediately and I'm open to relocation. I'm also enrolled in the M.Sc. Operations Research and Business Analytics at Otto von Guericke University Magdeburg, and open to working student positions and internships.",
-  ],
+    "My background in Mobility and Logistics taught me how business processes work. My experience at Continental and Uniper showed me how the right data, clear reporting, and smart automation can make those processes more efficient.",
+    "At Continental, I worked with Power BI, SQL, SAP ERP, and Excel to develop dashboards and reporting solutions for eight engineering projects. From European KPI reporting to prototype cost analysis and engineering data validation, I learned how to turn complex information into insights that international teams could actually use.",
+    "At Uniper, I took that experience further. As part of the Transformation & Excellence team, I developed and published five Power BI dashboards, automated business processes using Microsoft Power Platform, and built a Copilot Studio agent to improve access to internal knowledge. I also supported colleagues through hands-on AI training and explored Microsoft 365 Copilot adoption in my Bachelor's thesis.",
+    {
+      quote:
+        "What I enjoy most is understanding a business problem, working through the data, and building something that makes people's work easier. I'm comfortable connecting technical solutions with real business needs, whether that means creating a dashboard, improving a reporting process, or exploring how AI can support everyday work.",
+    },
+    "I hold a B.Sc. in Mobility and Logistics and am currently enrolled in an M.Sc. in Operations Research and Business Analytics at Otto von Guericke University Magdeburg.",
+    "I'm looking for my next opportunity in Business Intelligence, Data Analytics, Business Analysis, Digital Transformation, or Supply Chain Analytics, where I can contribute from day one and continue developing my skills. I'm also open to working student positions and internships.",
+  ] as (string | { quote: string })[],
   /** Short German profile, shown in a collapsible block in the About section. */
   aboutDe:
     "Junior Business Intelligence & Data Analyst mit Praxiserfahrung bei Uniper (Werkstudent, Transformation & Excellence) und Continental (Praktikum, Power BI). Schwerpunkte: Power BI, DAX, Power Query, SQL, SAP-ERP-Daten, KPI-Reporting und Prozessautomatisierung mit Power Automate. B.Sc. Mobility and Logistics (Hochschule Rhein-Waal), seit Oktober 2026 M.Sc. Operations Research and Business Analytics (Otto-von-Guericke-Universität Magdeburg). Ab sofort verfügbar für eine Vollzeitstelle in Deutschland und offen für einen Umzug; Werkstudenten- und Praktikumsstellen kommen ebenfalls infrage. Deutsch: B1 (telc), B2 in Vorbereitung.",

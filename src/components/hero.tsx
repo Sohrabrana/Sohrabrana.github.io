@@ -39,7 +39,8 @@ export function Hero() {
           <p className="font-display mt-4 text-[clamp(1.6rem,3.6vw,2.4rem)] font-medium leading-tight text-route">
             {profile.role}
           </p>
-          <p className="mt-5 max-w-[38rem] text-lg leading-relaxed text-muted sm:text-xl">{profile.lede}</p>
+          <p className="mt-6 max-w-[36rem] text-[1.35rem] font-semibold leading-snug sm:text-[1.6rem]">{profile.headline}</p>
+          <p className="mt-4 max-w-[38rem] text-lg leading-relaxed text-muted">{profile.lede}</p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             {cvFiles.map((cv, i) => (

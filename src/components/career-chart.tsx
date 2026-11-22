@@ -41,7 +41,8 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
   const lastYear = Number(axisEnd.slice(0, 4));
   const years = Array.from({ length: lastYear - firstYear + 1 }, (_, i) => firstYear + i);
 
-  const active = rows.find((r) => r.id === activeId);
+  const activeIsExtension = activeId?.endsWith("-ext") ?? false;
+  const active = rows.find((r) => r.id === activeId || `${r.id}-ext` === activeId);
 
   return (
     <figure className="rounded-2xl border border-line bg-surface p-5 sm:p-7">
@@ -56,7 +57,7 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
           ))}
           {rows.some((r) => r.extension) && (
             <li className="flex items-center gap-2">
-              <span className="hatch inline-block h-2.5 w-5 rounded-sm text-route/70 ring-1 ring-inset ring-route/40" aria-hidden="true" />
+              <span className="inline-block h-2.5 w-5 rounded-sm bg-route/45" aria-hidden="true" />
               Voluntary extension
             </li>
           )}
@@ -122,17 +123,25 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
                     }`}
                   />
                   {row.extension && (
-                    <motion.span
-                      aria-hidden="true"
-                      initial={reduce ? false : { opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.4, delay: 0.85 + i * 0.09 }}
-                      title={row.extension.label}
-                      className="hatch absolute inset-y-1 rounded-r-[5px] text-route/70"
+                    <motion.a
+                      href={row.href}
+                      aria-label={`${row.extension.label} at ${row.label}, ${formatRange(row.extension.start, row.extension.end)}`}
+                      onMouseEnter={() => setActiveId(`${row.id}-ext`)}
+                      onMouseLeave={() => setActiveId((id) => (id === `${row.id}-ext` ? null : id))}
+                      onFocus={() => setActiveId(`${row.id}-ext`)}
+                      onBlur={() => setActiveId((id) => (id === `${row.id}-ext` ? null : id))}
+                      initial={reduce ? false : { scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.45, delay: 0.75 + i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                      // The internship bar already covers January, so the extension bar starts after it (2px gap).
                       style={{
-                        left: `${pct(row.extension.start) + span(row.extension.start, row.extension.start)}%`,
-                        width: `${span(row.extension.start, row.extension.end) - span(row.extension.start, row.extension.start)}%`,
+                        left: `calc(${pct(row.extension.start) + span(row.extension.start, row.extension.start)}% + 2px)`,
+                        width: `calc(${span(row.extension.start, row.extension.end) - span(row.extension.start, row.extension.start)}% - 2px)`,
+                        transformOrigin: "left center",
                       }}
+                      className={`absolute inset-y-1 block min-w-2 rounded-[5px] bg-route/45 outline-offset-2 transition-[filter,box-shadow] hover:brightness-110 ${
+                        activeId === `${row.id}-ext` ? "ring-2 ring-ink/70 ring-offset-2 ring-offset-surface" : ""
+                      }`}
                     />
                   )}
                   {row.extension && (
@@ -153,7 +162,14 @@ export function CareerChart({ rows, axisStart, axisEnd }: Props) {
 
       {/* Read-out for the hovered or focused bar */}
       <p className="mt-5 min-h-12 border-t border-line pt-4 text-sm text-muted" aria-live="polite">
-        {active ? (
+        {active && activeIsExtension && active.extension ? (
+          <>
+            <span className="block font-medium text-ink">
+              {active.extension.label}, {active.label}
+            </span>
+            <span className="tabular">{formatRange(active.extension.start, active.extension.end)}</span>
+          </>
+        ) : active ? (
           <>
             <span className="block font-medium text-ink">{active.detail}</span>
             <span className="tabular">
