@@ -1,7 +1,8 @@
-import { ArrowUpRight, Award, GraduationCap } from "lucide-react";
+import { Award, GraduationCap } from "lucide-react";
 import { certifications, certificationsMoreUrl, education } from "@/content/education";
 import { formatRange, formatYm } from "@/lib/site";
 import { Section } from "./section";
+import { CertificateGallery } from "./certificate-gallery";
 
 export function EducationSection() {
   return (
@@ -34,31 +35,13 @@ export function EducationSection() {
           <Award className="size-6 text-route" aria-hidden="true" />
           Certifications
         </h3>
-        <ul className="mt-5 divide-y divide-line border-y border-line">
-          {certifications.map((c) => (
-            <li key={c.title} className="grid gap-1 py-3.5 sm:grid-cols-[6.5rem_minmax(0,1fr)] sm:gap-6">
-              <span className="text-sm text-muted tabular">{formatYm(c.date)}</span>
-              <span>
-                <span className="font-medium">{c.title}</span>
-                <span className="text-muted">, {c.issuer}</span>
-                {c.note && <span className="block text-sm text-muted">{c.note}</span>}
-                {c.url && (
-                  <a href={c.url} target="_blank" rel="noopener" className="mt-0.5 flex w-fit items-center gap-1 text-sm font-medium text-route hover:underline">
-                    View credential
-                    <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                    <span className="sr-only">(opens in a new tab)</span>
-                  </a>
-                )}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <CertificateGallery items={certifications} />
         <p className="mt-4 text-sm text-muted">
           Credentials are also listed on{" "}
           <a href={certificationsMoreUrl} target="_blank" rel="noopener" className="text-link">
             my LinkedIn profile
           </a>
-          . Certificate copies are available on request.
+          . Select a certificate to see it full size. Other certificate copies are available on request.
         </p>
       </div>
     </Section>

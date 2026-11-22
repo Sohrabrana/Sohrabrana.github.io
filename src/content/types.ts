@@ -73,6 +73,8 @@ export interface Certification {
   /** true when the certificate document has been checked. */
   documentOnFile?: boolean;
   note?: string;
+  /** Picture of the certificate (from LinkedIn). Files live in public/certificates/. */
+  image?: { src: string; thumb: string; width: number; height: number; alt: string };
 }
 
 export interface CvFile {

@@ -109,7 +109,9 @@ Add an entry to `certifications` in `src/content/education.ts` (newest first):
 { title: "PL-300: Microsoft Power BI Data Analyst", issuer: "Microsoft", date: "2027-02", url: "https://learn.microsoft.com/..." },
 ```
 
-`url` is optional; when present, the site shows a "View credential" link. Remember to add the certificate to both CVs as well.
+`url` is optional; when present, the site shows a "Verify credential" link. Remember to add the certificate to both CVs as well.
+
+To show a picture of the certificate, save it as `public/certificates/<name>.jpg` plus a smaller `<name>-thumb.jpg` (about 640 px wide) and add `image: { src, thumb, width, height, alt }` to the entry. Visitors can open it full size. Only publish certificates without private data (no birth date, address or ID numbers; for example, the telc certificate stays off the site).
 
 ### Add or change a job
 
